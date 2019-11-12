@@ -507,7 +507,7 @@ select::-ms-expand {
 .offset-top-50{margin-top:50px;}
 .offset-top-75{margin-top:75px;}
 
-section{padding:48px 0 70px 0;}
+section{padding:105px 0 70px 0;}
 section.section-0{padding:66px 0 102px 0;}
 section.section-1{padding-bottom:20px;}
 section.section-2{padding-bottom:0px;}
@@ -775,7 +775,7 @@ footer .phone{font-size:18px;line-height:40px;font-weight:700;display:inline-blo
 
 
 
-/*======================= Стационар =======================*/
+/*======================= пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ =======================*/
 button#okrug{width:228px;height:50px;text-align:left;padding:6px 20px;margin-left:10px;}
 button#okrug+.dropdown-menu{left:auto;right:0;width:228px;}
 
@@ -840,7 +840,7 @@ button#okrug+.dropdown-menu{left:auto;right:0;width:228px;}
 	.stacionar-sm .media>div.button{padding:0;width:146px;margin:0 auto;}
 }
 
-/*================ Патронаж ==================*/
+/*================ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ==================*/
 button#sort{width:228px;height:50px;text-align:left;padding:6px 20px;margin-left:10px;}
 button#sort+.dropdown-menu{left:auto;right:0;width:228px;}
 
@@ -962,7 +962,7 @@ a.toggle-form:hover{text-decoration:none;}
 .item_card .review-info p, .person_card .review-info p{margin:0 0 3px 0;}
 .item_card .review-info p.text-muted, .person_card .review-info p.text-muted{font-size:14px;line-height:19px;}
 
-/*================ Соискателям ==================*/
+/*================ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ==================*/
 .anketa{padding:29px 0 30px 30px;/*margin-top:75px;*/}
 .anketa a{text-decoration:underline;}
 #anketa-form button{width:300px;font-size:18px;height:48px;margin-bottom:13px;}
@@ -998,7 +998,7 @@ a.toggle-form:hover{text-decoration:none;}
 	#anketa-form .form-group{width:95%;]
 }
 
-/*======================= Личный кабинет ==========================*/
+/*======================= пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ ==========================*/
 .personal{padding:30px;min-height:430px;}
 .personal .table td{font-size:14px;}
 .personal h3{margin:0 0 1em 0;}
