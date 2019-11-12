@@ -12,8 +12,6 @@ def create_app():
 
     @app.route('/patronage')
     def base_test():
-
-
         return render_template('patronazh.html')
 
     return app
