@@ -1,82 +1,25 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-	<title>Title</title>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="format-detection" content="telephone=no">
-	
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/main.css">
-	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
-	<script type="text/javascript" defer src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
-</head>
-<body>
-	<header class="inner">
-		<div class="top-header">
-			<div class="container">
-				<div class="pull-left">
-					<div class="dropdown">
-						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-							<span class="icon-location"></span> Москва
-						</button>
-						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-							<li><a href="#">Санкт-Петербург</a></li>
-							<li><a href="#">Новосибирск</a></li>
-							<li><a href="#">Барнаул</a></li>
-							<li><a href="#">Белгород</a></li>
-						</ul>
-					</div>
-					<span class="phone">8 800 000 000 000</span>Будни: 8:00 — 20:00 Выходные: 9:00 — 18:00
-				</div>
-				<div class="pull-right">
-					<a href="cabinet.html">Личный кабинет</a>
-				</div>
-			</div>
-		</div>
-		<hr class="top">
-		<div class="container">
-			<nav class="navbar navbar-default">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="index.html"><img src="img/logo-inner.png" alt="Патронаж Сервис" /></a>
-				</div>
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="about.html">О нас</a></li>
-						<li><a href="anketa.html">Соискателям</a></li>
-					</ul>
-				</div><!-- /.navbar-collapse -->
-			</nav>
-		</div>
-	</header>
+{% extends 'base.html' %}
+
+{% block content %}
 	<main>
 		<section class="mainbg section-1">
 			<div class="container">
-				<a href="stacionar.html" class="back">Назад к результатам поиска</a>
+				<a href="hospital" class="back">Назад к результатам поиска</a>
 				<div class="row item_card">
 					<div class="col-md-9">
 						<div class="box">
 							<div class="wrapper">
 								<h3 class="media-heading">3-й Центральный Военный Клинический Госпиталь им. А.А. Вишневского, филиал №2</h3>
 								<p>улица Левобережная, 5 еще 4 филиала</p>
-								<a href="stacionar.html"><span class="badge">Федеральные учреждения</span></a>
+								<span class="badge">Федеральные учреждения</span>
 								<figure>
-									<img src="img/stacionar_card1.jpg" alt="" />
-									<a href="img/stacionar_card1.jpg" target="_blank" data-fancybox="stacionar" data-caption="3-й Центральный Военный Клинический Госпиталь им. А.А. Вишневского, филиал №2" class="btn btn-default">Посмотреть все фотографии</a>
-									<a href="img/panorama_3.jpg" target="_blank" data-fancybox="stacionar" data-caption="3-й Центральный Военный Клинический Госпиталь им. А.А. Вишневского, филиал №2"></a>
-									<a href="img/panorama_4.jpg" target="_blank" data-fancybox="stacionar" data-caption="3-й Центральный Военный Клинический Госпиталь им. А.А. Вишневского, филиал №2"></a>
-									<a href="img/panorama_4-2.jpg" target="_blank" data-fancybox="stacionar" data-caption="3-й Центральный Военный Клинический Госпиталь им. А.А. Вишневского, филиал №2"></a>
-									<a href="img/panorama_5.jpg" target="_blank" data-fancybox="stacionar" data-caption="3-й Центральный Военный Клинический Госпиталь им. А.А. Вишневского, филиал №2"></a>
-									<a href="img/panorama_8.jpg" target="_blank" data-fancybox="stacionar" data-caption="3-й Центральный Военный Клинический Госпиталь им. А.А. Вишневского, филиал №2"></a>
+									<img src="static/img/stacionar_card1.jpg" alt="" />
+									<a href="static/img/stacionar_card1.jpg" target="_blank" data-fancybox="stacionar" data-caption="3-й Центральный Военный Клинический Госпиталь им. А.А. Вишневского, филиал №2" class="btn btn-default">Посмотреть все фотографии</a>
+									<a href="static/img/panorama_3.jpg" target="_blank" data-fancybox="stacionar" data-caption="3-й Центральный Военный Клинический Госпиталь им. А.А. Вишневского, филиал №2"></a>
+									<a href="static/img/panorama_4.jpg" target="_blank" data-fancybox="stacionar" data-caption="3-й Центральный Военный Клинический Госпиталь им. А.А. Вишневского, филиал №2"></a>
+									<a href="static/img/panorama_4-2.jpg" target="_blank" data-fancybox="stacionar" data-caption="3-й Центральный Военный Клинический Госпиталь им. А.А. Вишневского, филиал №2"></a>
+									<a href="static/img/panorama_5.jpg" target="_blank" data-fancybox="stacionar" data-caption="3-й Центральный Военный Клинический Госпиталь им. А.А. Вишневского, филиал №2"></a>
+									<a href="static/img/panorama_8.jpg" target="_blank" data-fancybox="stacionar" data-caption="3-й Центральный Военный Клинический Госпиталь им. А.А. Вишневского, филиал №2"></a>
 								</figure>
 							</div>
 							<!-- Nav tabs -->
@@ -147,8 +90,8 @@
 						<div class="box stacionar-sm">
 							<div class="media">
 								<div class="media-left pic">
-									<a href="stacionar_item.html">
-										<img src="img/stac.jpg" alt="3-й Центральный Военный Клинический Госпиталь им. А.А. Вишневского, филиал №2" />
+									<a href="hospital_item">
+										<img src="static/img/stac.jpg" alt="3-й Центральный Военный Клинический Госпиталь им. А.А. Вишневского, филиал №2" />
 									</a>
 								</div>
 								<div class="media-body">
@@ -158,11 +101,11 @@
 							</div>
 							<div class="media">
 								<div class="media-body">
-									<a href="stacionar.html"><span class="badge">Федеральные учреждения</span></a>
+									<span class="badge">Федеральные учреждения</span>
 									<p>Самое важное в жизни — судить обо всём предвзято. Толпа, как известно, обычно ошибается, а каждый человек в отдельности всегда прав ...</p>
 								</div>
 								<div class="media-right button">
-									<a href="stacionar_item.html" class="btn btn-primary" role="button">Подробнее</a>
+									<a href="hospital_item" class="btn btn-primary" role="button">Подробнее</a>
 								</div>
 							</div>
 						</div>
@@ -171,8 +114,8 @@
 						<div class="box stacionar-sm">
 							<div class="media">
 								<div class="media-left pic">
-									<a href="stacionar_item.html">
-										<img src="img/stac.jpg" alt="3-й Центральный Военный Клинический Госпиталь им. А.А. Вишневского, филиал №2" />
+									<a href="hospital_item">
+										<img src="static/img/stac.jpg" alt="3-й Центральный Военный Клинический Госпиталь им. А.А. Вишневского, филиал №2" />
 									</a>
 								</div>
 								<div class="media-body">
@@ -182,11 +125,11 @@
 							</div>
 							<div class="media">
 								<div class="media-body">
-									<a href="stacionar.html"><span class="badge">Федеральные учреждения</span></a>
+									<span class="badge">Федеральные учреждения</span>
 									<p>Самое важное в жизни — судить обо всём предвзято. Толпа, как известно, обычно ошибается, а каждый человек в отдельности всегда прав ...</p>
 								</div>
 								<div class="media-right button">
-									<a href="stacionar_item.html" class="btn btn-primary" role="button">Подробнее</a>
+									<a href="hospital_item" class="btn btn-primary" role="button">Подробнее</a>
 								</div>
 							</div>
 						</div>
@@ -195,38 +138,5 @@
 			</div>
 		</section>
 	</main>
-	<footer class="page_footer ds section_padding_top_50 section_padding_bottom_65 columns_padding_25 table_section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4 col-sm-12">
-					<a href="index.html" class="logo">
-						<img src="img/logo-footer.png" alt="Патронаж Сервис">
-					</a>
-				</div>
-				<div class="col-md-2 col-sm-12 ">
-					<span class="phone">8 800 000 000 000</span>
-				</div>
-				<div class="col-md-6 col-sm-12 ">
-					<p class="offset-top-10">Будни: 8:00 — 20:00</p>
-					<p>Выходные: 9:00 — 18:00</p>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<section id="copyright">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12 text-center">
-					<p>20017 &copy; Все права защищены</p>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--<script type="text/javascript" src="js/jquery-min.js"></script>-->
-	
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/plugins.js"></script>
-	<script type="text/javascript" src="js/script.js"></script>
-	
-</body>
-</html>
+
+	 {% endblock %}

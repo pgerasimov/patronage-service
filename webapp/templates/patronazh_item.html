@@ -1,65 +1,11 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-	<title>Title</title>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="format-detection" content="telephone=no">
-	
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/main.css">
-</head>
-<body>
-	<header class="inner">
-		<div class="top-header">
-			<div class="container">
-				<div class="pull-left">
-					<div class="dropdown">
-						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-							<span class="icon-location"></span> Москва
-						</button>
-						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-							<li><a href="#">Санкт-Петербург</a></li>
-							<li><a href="#">Новосибирск</a></li>
-							<li><a href="#">Барнаул</a></li>
-							<li><a href="#">Белгород</a></li>
-						</ul>
-					</div>
-					<span class="phone">8 800 000 000 000</span>Будни: 8:00 — 20:00 Выходные: 9:00 — 18:00
-				</div>
-				<div class="pull-right">
-					<a href="cabinet.html">Личный кабинет</a>
-				</div>
-			</div>
-		</div>
-		<hr class="top">
-		<div class="container">
-			<nav class="navbar navbar-default">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="index.html"><img src="img/logo-inner.png" alt="Патронаж Сервис" /></a>
-				</div>
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="about.html">О нас</a></li>
-						<li><a href="anketa.html">Соискателям</a></li>
-					</ul>
-				</div><!-- /.navbar-collapse -->
-			</nav>
-		</div>
-	</header>
+ {% extends 'base.html' %}
+
+ {% block content %}
+
 	<main>
 		<section class="mainbg person_card section-1">
 			<div class="container">
-				<a href="patronazh.html" class="back">Назад к результатам поиска</a>
+				<a href="patronage" class="back">Назад к результатам поиска</a>
 				<div class="row">
 					<div class="col-md-9">
 						<div class="box">
@@ -67,8 +13,8 @@
 								<p class="status">Заходил сегодня в 14:33</p>
 								<div class="media">
 									<div class="media-left pic">
-										<a href="img/face.jpg" target="_blank" data-fancybox data-caption="Евгения Ивановна К.">
-											<img src="img/face.jpg" alt="Евгения Ивановна К." class="img-circle"/>
+										<a href="static/img/face.jpg" target="_blank" data-fancybox data-caption="Евгения Ивановна К.">
+											<img src="static/img/face.jpg" alt="Евгения Ивановна К." class="img-circle"/>
 										</a>
 										<small>Кликните на фото,<br/>чтобы увеличить</small>
 									</div>
@@ -165,7 +111,6 @@
 						<div class="text-center">
 							<a href="#" class="btn btn-primary">Показать контакты</a>
 							<span class="text-primary">за 99 руб.</span>
-							<a href="#" class="btn btn-default"><span class="icon-heart-empty"></span> Отложить</a>
 						</div>
 						<h4>Занятость</h4>
 						<ul>
@@ -192,7 +137,7 @@
 							<div class="media">
 								<div class="media-left">
 									<a href="patronazh_item.html">
-										<img class="media-object" src="img/face4.jpg" alt="Константин Константинович К." />
+										<img class="media-object" src="static/img/face4.jpg" alt="Константин Константинович К." />
 									</a>
 								</div>
 								<div class="media-body">
@@ -211,7 +156,6 @@
 								</div>
 							</div>
 							<div class="buttons">
-								<a href="#" class="btn btn-default col-md-6"><span class="icon-heart-empty"></span> Отложить</a> &nbsp; 
 								<a href="#" class="btn btn-primary col-md-6">Контакты</a>
 							</div>
 						</div>
@@ -223,7 +167,7 @@
 							<div class="media">
 								<div class="media-left">
 									<a href="patronazh_item.html">
-										<img class="media-object" src="img/face2.jpg" alt="Константин Константинович К." />
+										<img class="media-object" src="static/img/face2.jpg" alt="Константин Константинович К." />
 									</a>
 								</div>
 								<div class="media-body">
@@ -242,7 +186,6 @@
 								</div>
 							</div>
 							<div class="buttons">
-								<a href="#" class="btn btn-default col-md-6"><span class="icon-heart-empty"></span> Отложить</a> &nbsp; 
 								<a href="#" class="btn btn-primary col-md-6">Контакты</a>
 							</div>
 						</div>
@@ -254,11 +197,11 @@
 							<div class="media">
 								<div class="media-left">
 									<a href="patronazh_item.html">
-										<img class="media-object" src="img/face.jpg" alt="Ирина Николаевна Ч." />
+										<img class="media-object" src="static/img/face.jpg" alt="Ирина Николаевна Ч." />
 									</a>
 								</div>
 								<div class="media-body">
-									<h3 class="media-heading"><a href="patronazh_item.html">Ирина Николаевна Ч.</a></h3>
+									<h3 class="media-heading"><a href="patronage_item">Ирина Николаевна Ч.</a></h3>
 									<p>Москва, улица Теплый Стан, Теплый стан</p>
 								</div>
 							</div>
@@ -266,15 +209,14 @@
 							<p class="text-muted">Опыт: 1 год</p>
 							<div class="row">
 								<div class="col-xs-6">
-									<p class="offset-top-18"><a href="patronazh_item.html#review">Отзывы (1)</a></p>
+									<p class="offset-top-18">Отзывы (1)</p>
 								</div>
 								<div class="col-xs-6 text-right">
 									<p>от <span class="price">150</span><br/>руб./час</p>
 								</div>
 							</div>
 							<div class="buttons">
-								<a href="#" class="btn btn-default col-md-6"><span class="icon-heart-empty"></span> Отложить</a> &nbsp; 
-								<a href="#" class="btn btn-primary col-md-6">Контакты</a>
+								<a href="#" class="btn btn-primary col-md-6">Подробнее</a>
 							</div>
 						</div>
 					</div>
@@ -283,38 +225,5 @@
 			</div>
 		</section>
 	</main>
-	<footer class="page_footer ds section_padding_top_50 section_padding_bottom_65 columns_padding_25 table_section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4 col-sm-12">
-					<a href="index.html" class="logo">
-						<img src="img/logo-footer.png" alt="Патронаж Сервис">
-					</a>
-				</div>
-				<div class="col-md-2 col-sm-12 ">
-					<span class="phone">8 800 000 000 000</span>
-				</div>
-				<div class="col-md-6 col-sm-12 ">
-					<p class="offset-top-10">Будни: 8:00 — 20:00</p>
-					<p>Выходные: 9:00 — 18:00</p>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<section id="copyright">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12 text-center">
-					<p>20017 &copy; Все права защищены</p>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--<script type="text/javascript" src="js/jquery-min.js"></script>-->
-	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/plugins.js"></script>
-	<script type="text/javascript" src="js/script.js"></script>
-	
-</body>
-</html>
+
+ {% endblock %}
