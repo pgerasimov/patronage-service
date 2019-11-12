@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Title</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<header class="inner">
+		<div class="top-header">
+			<div class="container">
+				<div class="pull-left">
+					<div class="dropdown">
+						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							<span class="icon-location"></span> Москва
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							<li><a href="#">Санкт-Петербург</a></li>
+							<li><a href="#">Новосибирск</a></li>
+							<li><a href="#">Барнаул</a></li>
+							<li><a href="#">Белгород</a></li>
+						</ul>
+					</div>
+					<span class="phone">8 800 000 000 000</span>Будни: 8:00 — 20:00 Выходные: 9:00 — 18:00
+				</div>
+				<div class="pull-right">
+					<a href="">Личный кабинет</a>
+				</div>
+			</div>
+		</div>
+		<hr class="top">
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html"><img src="img/logo-inner.png" alt="Патронаж Сервис" /></a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="about.html">О нас</a></li>
+						<li><a href="anketa.html">Соискателям</a></li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</nav>
+		</div>
+	</header>
+	<main>
+		<section class="mainbg">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7">
+						<h1 class="section-title">Домашний патронаж</h1>
+					</div>
+					<div class="col-md-5 text-right">
+						<div class="dropdown">
+							Сортировать по: 
+							<button class="btn dropdown-toggle" type="button" id="sort" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+								Релевантности
+							</button>
+							<ul class="dropdown-menu" aria-labelledby="sort">
+								<li><a href="#">Возрастанию цены</a></li>
+								<li><a href="#">Убыванию цены</a></li>
+								<li><a href="#">Рейтингу</a></li>
+								<li><a href="#">Опыту</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="box offset-top-15">
+							<form method="get" action="" name="" id="filter-form">
+								<div class="wrapper">
+									<div class="form-group">
+										<label for="pricefrom">Ставка за час, руб.</label>
+										<div class="flex">
+											<div class="input-group">
+												<div class="input-group-addon">от</div>
+												<input type="text" class="form-control" name="pricefrom" id="pricefrom">
+											</div>
+											<div class="input-group">
+												<div class="input-group-addon">до</div>
+												<input type="text" class="form-control" name="priceto" id="priceto">
+											</div>
+										</div>
+									</div>
+								</div>
+								<hr/>
+								<div class="wrapper">
+									<h5>Требования к помощнику</h5>
+									<div class="form-group">
+										<label for="agefrom">Возраст</label>
+										<div class="flex">
+											<div class="input-group">
+												<div class="input-group-addon">от</div>
+												<input type="text" class="form-control" name="agefrom" id="agefrom">
+											</div>
+											<div class="input-group">
+												<div class="input-group-addon">до</div>
+												<input type="text" class="form-control" name="ageto" id="ageto">
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label>Пол</label>
+										<div class="checkbox">
+											<input type="checkbox" id="ch0" value="0"><label class="checkbox-inline" for="ch0">Мужской</label>
+											<input type="checkbox" id="ch1" value="1"><label class="checkbox-inline" for="ch1">Женский</label>
+											<input type="checkbox" id="ch2" value="2" checked><label class="checkbox-inline" for="ch2">Не важно</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="checkbox">
+											<input type="checkbox" value="" id="ch3" checked><label for="ch3">Медицинское образование</label>
+										</div>
+										<div class="checkbox">
+											<input type="checkbox" value="" id="ch4"><label for="ch4">Рекомендации</label>
+										</div>
+										<div class="checkbox">
+											<input type="checkbox" value="" id="ch5"><label for="ch5">Постоянная регистрация по месту жительства</label>
+										</div>
+										<div class="checkbox">
+											<input type="checkbox" value="" id="ch6"><label for="ch6">С фотографией</label>
+										</div>
+										<div class="checkbox">
+											<input type="checkbox" value="" id="ch7"><label for="ch7">С отзывами</label>
+										</div>
+									</div>
+								</div>
+								<div class="tohide">
+									<hr/>
+									<div class="wrapper">
+										<h5>Условия работы</h5>
+										<div class="form-group">
+											<label>Занятость</label>
+											<div class="checkbox">
+												<input type="checkbox" value="" id="ch8"><label for="ch8">Полная занятость (5/2 или 6/1)</label>
+											</div>
+											<div class="checkbox">
+												<input type="checkbox" value="" id="ch9"><label for="ch9">Частичная занятость</label>
+											</div>
+											<div class="checkbox">
+												<input type="checkbox" value="" id="ch10"><label for="ch10">С проживанием</label>
+											</div>
+										</div>
+										<div class="form-group">
+											<label>Особенности пациента</label>
+											<div class="checkbox">
+												<input type="checkbox" value="" id="ch11"><label for="ch11">Сахарный диабет</label>
+											</div>
+											<div class="checkbox">
+												<input type="checkbox" value="" id="ch12"><label for="ch12">Инсульт (постинсульная реабилитация)</label>
+											</div>
+											<div class="checkbox">
+												<input type="checkbox" value="" id="ch13"><label for="ch13">Болезнь Альцгеймера</label>
+											</div>
+											<div class="checkbox">
+												<input type="checkbox" value="" id="ch14"><label for="ch14">ДЦП</label>
+											</div>
+											<div class="checkbox">
+												<input type="checkbox" value="" id="ch15"><label for="ch15">Аутизм</label>
+											</div>
+											<div class="checkbox">
+												<input type="checkbox" value="" id="ch16"><label for="ch16">Лежачий больной</label>
+											</div>
+											<div class="checkbox">
+												<input type="checkbox" value="" id="ch17"><label for="ch17">Онкология</label>
+											</div>
+											<div class="checkbox">
+												<input type="checkbox" value="" id="ch18"><label for="ch18">Психические расстройства</label>
+											</div>
+											<div class="checkbox">
+												<input type="checkbox" value="" id="ch19"><label for="ch19">Различные травмы</label>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="selectage">Возраст пациента</label>
+											<div class="select-wrapper">
+												<select id="selectage">
+													<option>40-50 лет</option>
+													<option>50-60 лет</option>
+													<option>60-70 лет</option>
+													<option>70-80 лет</option>
+													<option>от 80 и старше</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="wrapper">
+									<button type="submit" class="btn btn-primary">Применить</button>
+									<button type="reset" class="btn btn-reset"><span class="icon-cancel" aria-hidden="true"></span> Очистить фильтры</button>
+								</div>
+								<hr/>
+								<a href="#" class="toggle-form"><span class="icon-double_up" aria-hidden="true"></span></a>
+							</form>
+						</div>
+					</div>
+					<div class="col-md-8" id="patronazh-list">
+						<ul class="tabs">
+							<li><a href="patronazh.html">Все (281)</a></li>
+							<li class="active"><a href="patronazh2.html">Отложенные (2)</a></li>
+						</ul>
+						
+						<div class="box patronazh">
+							<p class="status">Заходил сегодня в 15:41</p>
+							<div class="row">
+								<div class="media col-md-9">
+									<div class="media-left">
+										<a href="patronazh_item.html">
+											<img class="media-object" src="img/face2.jpg" alt="Евгения Ивановна К." />
+										</a>
+									</div>
+									<div class="media-body">
+										<h3 class="media-heading"><a href="patronazh_item.html">Евгения Ивановна К.</a></h3>
+										<p>Москва, улица Теплый Стан, Теплый стан</p>
+										<p>40 лет, есть медицинское образование</p>
+									</div>
+								</div>
+								<div class="col-md-3 text-right">
+									<p>от <span class="price">200</span><br/>руб./час</p>
+									<p><a href="patronazh_item.html#review">Отзывы (15)</a></p>
+									<p class="text-muted">Опыт: 5 лет</p>
+								</div>
+								<div class="col-md-8">
+									<p>Самое важное в жизни — судить обо всём предвзято. Толпа, как известно, обычно ошибается, а каждый человек в отдельности всегда прав. Впрочем, не выводите из этого утверждения правил поведения. Им можно следовать, лишь пока они не ...</p>
+								</div>
+								<div class="col-md-4 text-center">
+									<a href="#" class="btn btn-default"><span class="icon-heart"></span> Отложено</a>
+									<a href="tel:+78000000000">+7 800 000-00-00</a>
+									<a href="mailto:example@email.com">example@email.com</a>
+								</div>
+							</div>
+						</div>
+
+						
+						<div class="box patronazh">
+							<p class="status">Заходил сегодня в 15:41</p>
+							<div class="row">
+								<div class="media col-md-9">
+									<div class="media-left">
+										<a href="patronazh_item.html">
+											<img class="media-object" src="img/face4.jpg" alt="Константин Константинович К." />
+										</a>
+									</div>
+									<div class="media-body">
+										<h3 class="media-heading"><a href="patronazh_item.html">Константин Константинович К.</a></h3>
+										<p>Москва, улица Теплый Стан, Теплый стан</p>
+										<p>40 лет, есть медицинское образование</p>
+									</div>
+								</div>
+								<div class="col-md-3 text-right">
+									<p>от <span class="price">180</span><br/>руб./час</p>
+									<p><a href="patronazh_item.html#review">Отзывы (4)</a></p>
+									<p class="text-muted">Опыт: 3 года</p>
+								</div>
+								<div class="col-md-8">
+									<p>Самое важное в жизни — судить обо всём предвзято. Толпа, как известно, обычно ошибается, а каждый человек в отдельности всегда прав. Впрочем, не выводите из этого утверждения правил поведения. Им можно следовать, лишь пока они не ...</p>
+								</div>
+								<div class="col-md-4 text-center">
+									<a href="#" class="btn btn-default"><span class="icon-heart"></span> Отложкно</a>
+									<a href="tel:+78000000000">+7 800 000-00-00</a>
+									<a href="mailto:example@email.com">example@email.com</a>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="container">
+				<h2 class="section-title">Рекомендуем</h2>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="box patronazh-mini">
+							<p class="status">Заходил сегодня в 15:41</p>
+							<div class="media">
+								<div class="media-left">
+									<a href="patronazh_item.html">
+										<img class="media-object" src="img/face4.jpg" alt="Константин Константинович К." />
+									</a>
+								</div>
+								<div class="media-body">
+									<h3 class="media-heading"><a href="patronazh_item.html">Константин Константинович К.</a></h3>
+									<p>Москва, улица Теплый Стан, Теплый стан</p>
+								</div>
+							</div>
+							<p class="text-muted">40 лет, есть медицинское образование</p>
+							<p class="text-muted">Опыт: 2 года</p>
+							<div class="row">
+								<div class="col-xs-6">
+									<p class="offset-top-18"><a href="patronazh_item.html#review">Отзывы (1)</a></p>
+								</div>
+								<div class="col-xs-6 text-right">
+									<p>от <span class="price">150</span><br/>руб./час</p>
+								</div>
+							</div>
+							<div class="buttons">
+								<a href="#" class="btn btn-default col-md-6"><span class="icon-heart-empty"></span> Отложить</a> &nbsp; 
+								<a href="#" class="btn btn-primary col-md-6">Контакты</a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-4">
+						<div class="box patronazh-mini">
+							<p class="status">Заходил сегодня в 15:41</p>
+							<div class="media">
+								<div class="media-left">
+									<a href="patronazh_item.html">
+										<img class="media-object" src="img/face2.jpg" alt="Константин Константинович К." />
+									</a>
+								</div>
+								<div class="media-body">
+									<h3 class="media-heading"><a href="patronazh_item.html">Константин Константинович К.</a></h3>
+									<p>Москва, улица Теплый Стан, Теплый стан</p>
+								</div>
+							</div>
+							<p class="text-muted">40 лет, есть медицинское образование</p>
+							<p class="text-muted">Опыт: 2 года</p>
+							<div class="row">
+								<div class="col-xs-6">
+									<p class="offset-top-18"><a href="patronazh_item.html#review">Отзывы (1)</a></p>
+								</div>
+								<div class="col-xs-6 text-right">
+									<p>от <span class="price">150</span><br/>руб./час</p>
+								</div>
+							</div>
+							<div class="buttons">
+								<a href="#" class="btn btn-default col-md-6"><span class="icon-heart-empty"></span> Отложить</a> &nbsp; 
+								<a href="#" class="btn btn-primary col-md-6">Контакты</a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-4">
+						<div class="box patronazh-mini">
+							<p class="status">Заходил сегодня в 15:41</p>
+							<div class="media">
+								<div class="media-left">
+									<a href="patronazh_item.html">
+										<img class="media-object" src="img/face.jpg" alt="Ирина Николаевна Ч." />
+									</a>
+								</div>
+								<div class="media-body">
+									<h3 class="media-heading"><a href="patronazh_item.html">Ирина Николаевна Ч.</a></h3>
+									<p>Москва, улица Теплый Стан, Теплый стан</p>
+								</div>
+							</div>
+							<p class="text-muted">20 лет, есть медицинское образование</p>
+							<p class="text-muted">Опыт: 1 год</p>
+							<div class="row">
+								<div class="col-xs-6">
+									<p class="offset-top-18"><a href="patronazh_item.html#review">Отзывы (1)</a></p>
+								</div>
+								<div class="col-xs-6 text-right">
+									<p>от <span class="price">150</span><br/>руб./час</p>
+								</div>
+							</div>
+							<div class="buttons">
+								<a href="#" class="btn btn-default col-md-6"><span class="icon-heart-empty"></span> Отложить</a> &nbsp; 
+								<a href="#" class="btn btn-primary col-md-6">Контакты</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer class="page_footer ds section_padding_top_50 section_padding_bottom_65 columns_padding_25 table_section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-sm-12">
+					<a href="index.html" class="logo">
+						<img src="img/logo-footer.png" alt="Патронаж Сервис">
+					</a>
+				</div>
+				<div class="col-md-2 col-sm-12 ">
+					<span class="phone">8 800 000 000 000</span>
+				</div>
+				<div class="col-md-6 col-sm-12 ">
+					<p class="offset-top-10">Будни: 8:00 — 20:00</p>
+					<p>Выходные: 9:00 — 18:00</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<section id="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 text-center">
+					<p>20017 &copy; Все права защищены</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--<script type="text/javascript" src="js/jquery-min.js"></script>-->
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/plugins.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Title</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<header class="inner">
+		<div class="top-header">
+			<div class="container">
+				<div class="pull-left">
+					<div class="dropdown">
+						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							<span class="icon-location"></span> Москва
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							<li><a href="#">Санкт-Петербург</a></li>
+							<li><a href="#">Новосибирск</a></li>
+							<li><a href="#">Барнаул</a></li>
+							<li><a href="#">Белгород</a></li>
+						</ul>
+					</div>
+					<span class="phone">8 800 000 000 000</span>Будни: 8:00 — 20:00 Выходные: 9:00 — 18:00
+				</div>
+				<div class="pull-right">
+					<a href="cabinet.html">Личный кабинет</a>
+				</div>
+			</div>
+		</div>
+		<hr class="top">
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html"><img src="img/logo-inner.png" alt="Патронаж Сервис" /></a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="about.html">О нас</a></li>
+						<li><a href="anketa.html">Соискателям</a></li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</nav>
+		</div>
+	</header>
+	<main>
+		<section class="mainbg">
+			<div class="container">
+				<h1 class="section-title">Личный кабинет</h1>
+				<div class="row">
+					<div class="col-md-2">
+						<ul class="personal-menu">
+							<li class="active"><a href="#">Моя анкета</a></li>
+							<li><a href="#">Просмотры (48)</a></li>
+						</ul>
+					</div>
+					<div class="col-md-10">
+						<div class="box anketa">
+							<form action="" method="post" id="anketa-form">
+								<div class="media">
+									<div class="media-left">
+										<label for="about">Фото *</label>
+										<div class="photo"></div>
+										<p>Рекомендуем загружать фото не менее 500*500 пикселей, желательно в полный рост, т.к. многие пользователи сервиса при выборе помощника будут ориентироваться на ваши физические возможности</p>
+									</div>
+									<div class="media-body">
+										<h4>Персональная информация</h4>
+										<div class="form-group">
+											<label for="surname">Фамилия *</label>
+											<input type="text" class="form-control" name="surname" id="surname" value="Черненко">
+										</div>
+										<div class="form-group">
+											<label for="name">Имя *</label>
+											<input type="text" class="form-control" name="name" id="name" value="Ирина">
+										</div>
+										<div class="form-group">
+											<label for="mname">Отчество *</label>
+											<input type="text" class="form-control" name="mname" id="mname" value="Николаевна">
+										</div>
+										<div class="form-group">
+											<div class="row">
+												<div class="col-sm-5">
+													<label for="birthdate">Дата рождения *</label>
+													<div class="dp-wrapper"><input type="text" class="form-control date" id="birthdate" value="09.09.1978"></div>
+												</div>
+												<div class="col-sm-7">
+													<label>Пол *</label><br/>
+													<input type="radio" name="sex" id="s0" value="0" checked><label for="s0">Женский</label>
+													<input type="radio" name="sex" id="s1" value="1"><label for="s1">Мужской</label>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="about">О себе *</label>
+											<textarea class="form-control" name="txt" id="about" placeholder="Расскажите кратко о себе и своем опыте"></textarea>
+										</div>
+										<h4>Контактная информация</h4>
+										<div class="form-group">
+											<label for="phone">Телефон *</label>
+											<input type="text" class="form-control" name="phone" id="phone" value="+7 800 000-00-00">
+										</div>
+										<div class="form-group">
+											<label for="email">E-mail *</label>
+											<input type="email" class="form-control" name="email" id="email">
+										</div>
+										<div class="form-group">
+											<label for="password">Пароль *</label>
+											<input type="password" class="form-control" name="password" id="password">
+										</div>
+										<h4>Условия работы</h4>
+										<div class="form-group">
+											<div class="row">
+												<div class="col-sm-7">
+													<label for="pricefrom">Ставка, руб./час *</label>
+													<div class="flex">
+														<div class="input-group">
+															<div class="input-group-addon">от</div>
+															<input type="text" class="form-control" name="pricefrom" id="pricefrom" value="100">
+														</div>
+														<div class="input-group">
+															<div class="input-group-addon">до</div>
+															<input type="text" class="form-control" name="priceto" id="priceto" value="200">
+														</div>
+													</div>
+												</div>
+												<div class="col-sm-5">
+													<label for="exp">Опыт работы, лет *</label>
+													<input type="text" class="form-control" name="exp" id="exp" value="1">
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label>Занятость</label>
+											<div class="checkbox">
+												<input type="checkbox" value="" id="ch8"><label for="ch8">Полная занятость (5/2 или 6/1)</label>
+											</div>
+											<div class="checkbox">
+												<input type="checkbox" value="" id="ch9" checked><label for="ch9">Частичная занятость</label>
+											</div>
+											<div class="checkbox">
+												<input type="checkbox" value="" id="ch10"><label for="ch10">С проживанием</label>
+											</div>
+										</div>
+										<h4>Список навыков</h4>
+										<div class="form-group">
+											<label for="selectage">Возраст людей, за которыми вы ухаживали</label>
+											<div class="select-wrapper">
+												<select id="selectage" name="age">
+													<option value="0">40-50 лет</option>
+													<option value="1">50-60 лет</option>
+													<option value="2" selected>60-70 лет</option>
+													<option value="3">70-80 лет</option>
+													<option value="4">от 80 и старше</option>
+												</select>
+											</div>
+										</div>
+										<label>Опыт работы с больными по диагнозам</label>
+										<div class="row">
+											<div class="col-sm-6">
+												<div class="checkbox">
+													<input type="checkbox" value="" id="ch11"><label for="ch11">Онкология</label>
+												</div>
+												<div class="checkbox">
+													<input type="checkbox" value="" id="ch12"><label for="ch12">ДЦП</label>
+												</div>
+												<div class="checkbox">
+													<input type="checkbox" value="" id="ch13"><label for="ch13">Болезнь Альцгеймера</label>
+												</div>
+												<div class="checkbox">
+													<input type="checkbox" value="" id="ch14"><label for="ch14">Постинсультная терапия</label>
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<div class="checkbox">
+													<input type="checkbox" value="" id="ch15"><label for="ch15">Онкология</label>
+												</div>
+												<div class="checkbox">
+													<input type="checkbox" value="" id="ch16"><label for="ch16">ДЦП</label>
+												</div>
+												<div class="checkbox">
+													<input type="checkbox" value="" id="ch17"><label for="ch17">Болезнь Альцгеймера</label>
+												</div>
+												<div class="checkbox">
+													<input type="checkbox" value="" id="ch18"><label for="ch18">Постинсультная терапия</label>
+												</div>
+											</div>
+										</div>
+										<label>Опыт выполнения медицинских процедур</label>
+										<div class="row">
+											<div class="col-sm-6">
+												<div class="checkbox">
+													<input type="checkbox" value="" id="ch19"><label for="ch19">Гигиена больного</label>
+												</div>
+												<div class="checkbox">
+													<input type="checkbox" value="" id="ch20"><label for="ch20">Подкожные и внутримышечные инъекции</label>
+												</div>
+												<div class="checkbox">
+													<input type="checkbox" value="" id="ch21"><label for="ch21">Уход за лежачими больными</label>
+												</div>
+												<div class="checkbox">
+													<input type="checkbox" value="" id="ch22"><label for="ch22">Капельница</label>
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<div class="checkbox">
+													<input type="checkbox" value="" id="ch23"><label for="ch23">ЛФК</label>
+												</div>
+											</div>
+										</div>
+										<label>Дополнительные обязанности, которые вы можете выполнить</label>
+										<div class="row">
+											<div class="col-sm-6">
+												<div class="checkbox">
+													<input type="checkbox" value="" id="ch24"><label for="ch24">Приготовление еды</label>
+												</div>
+												<div class="checkbox">
+													<input type="checkbox" value="" id="ch25"><label for="ch25">Покупка продуктов и медикаментов</label>
+												</div>
+												<div class="checkbox">
+													<input type="checkbox" value="" id="ch26"><label for="ch26">Уборка</label>
+												</div>
+												<div class="checkbox">
+													<input type="checkbox" value="" id="ch27"><label for="ch27">Прогулки</label>
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<div class="checkbox">
+													<input type="checkbox" value="" id="ch28"><label for="ch28">Разовые поручения</label>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="text-center buttons">
+									<button type="submit" class="btn btn-default">Отменить</button>
+									<button type="submit" class="btn btn-primary">Сохранить</button>
+								</div>
+							</form>
+						</div>
+					</div
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer class="page_footer ds section_padding_top_50 section_padding_bottom_65 columns_padding_25 table_section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-sm-12">
+					<a href="index.html" class="logo">
+						<img src="img/logo-footer.png" alt="Патронаж Сервис">
+					</a>
+				</div>
+				<div class="col-md-2 col-sm-12 ">
+					<span class="phone">8 800 000 000 000</span>
+				</div>
+				<div class="col-md-6 col-sm-12 ">
+					<p class="offset-top-10">Будни: 8:00 — 20:00</p>
+					<p>Выходные: 9:00 — 18:00</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<section id="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 text-center">
+					<p>20017 &copy; Все права защищены</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<!--<script type="text/javascript" src="js/jquery-min.js"></script>-->
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
+	<script type="text/javascript" src="js/plugins.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	
+</body>
+</html>

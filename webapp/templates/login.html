@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Title</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<header class="relative">
+		<div class="top-header">
+			<div class="container">
+				<div class="pull-left">
+					<div class="dropdown">
+						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							<span class="icon-location"></span> Москва
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							<li><a href="#">Санкт-Петербург</a></li>
+							<li><a href="#">Новосибирск</a></li>
+							<li><a href="#">Барнаул</a></li>
+							<li><a href="#">Белгород</a></li>
+						</ul>
+					</div>
+					<span class="phone">8 800 000 000 000</span>Будни: 8:00 — 20:00 Выходные: 9:00 — 18:00
+				</div>
+				<div class="pull-right">
+					<a href="cabinet.html">Личный кабинет</a>
+				</div>
+			</div>
+		</div>
+		<hr class="top">
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="Патронаж Сервис" /></a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="about.html">О нас</a></li>
+						<li><a href="anketa.html">Соискателям</a></li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</nav>
+		</div>
+	</header>
+	<section class="headerpic header1" style="">
+	</section>
+	<main>
+		<section class="mainbg">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-xs-12 col-md-offset-1">
+						<h3 class="text-center text-white lg">Доступ к контактам интересующих специалистов, история заказов, избранное — в вашем Личном кабинете</h3>
+					</div>
+					<div class="col-md-8 col-xs-12 col-md-offset-2">
+						<div class="box login">
+							<!-- Nav tabs -->
+							<ul class="nav nav-tabs" role="tablist">
+								<li role="presentation" class="active"><a href="#log-in" aria-controls="log-in" role="tab" data-toggle="tab">Вход</a></li>
+								<li role="presentation"><a href="#sign-in" aria-controls="sign-in" role="tab" data-toggle="tab">Регистрация</a></li>
+							</ul>
+							<!-- Tab panes -->
+							<div class="tab-content">
+								<div role="tabpanel" class="tab-pane active" id="log-in">
+									<form action="" id="login-form" method="post" class="form-horizontal">
+										<div class="form-group">
+											<label for="inputEmail" class="col-sm-3 control-label">Логин</label>
+											<div class="col-sm-6">
+												<input type="email" class="form-control" id="inputEmail" placeholder="email">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="inputPassword" class="col-sm-3 control-label">Пароль</label>
+											<div class="col-sm-6">
+												<input type="password" class="form-control" id="inputPassword" placeholder="">
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-sm-offset-3 col-sm-6">
+												<button type="submit" class="btn btn-primary">Войти</button>
+											</div>
+										</div>
+										<div class="text-center offset-top-10"><a href="#">Забыли пароль?</a></div>
+									</form>
+								</div>
+								<div role="tabpanel" class="tab-pane" id="sign-in">
+									<form action="" id="signin-form" method="post" class="form-horizontal">
+										<div class="form-group">
+											<label for="inputEmail2" class="col-sm-3 control-label">Логин</label>
+											<div class="col-sm-6">
+												<input type="email" class="form-control" id="inputEmail2" placeholder="email">
+											</div>
+											<div class="col-sm-3 info">На этот адрес придет письмо с подтверждением регистрации</div>
+										</div>
+										<div class="form-group">
+											<label for="inputPassword2" class="col-sm-3 control-label">Пароль</label>
+											<div class="col-sm-6">
+												<input type="password" class="form-control" id="inputPassword2" placeholder="">
+											</div>
+											<div class="col-sm-3 info">Должен содержать минимум 6 символов, латинские строчные и прописные буквы</div>
+										</div>
+										<div class="form-group">
+											<div class="col-sm-offset-3 col-sm-6">
+												<button type="submit" class="btn btn-primary">Войти</button>
+											</div>
+										</div>
+										<div class="text-center text-muted offset-top-10">
+											<p>Регистрируясь, вы принимаете условия<br/>
+												<a data-toggle="modal" href="policy.html" data-target="#policyModal">Пользовательского соглашения</a></p>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer class="page_footer ds section_padding_top_50 section_padding_bottom_65 columns_padding_25 table_section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-sm-12">
+					<a href="index.html" class="logo">
+						<img src="img/logo-footer.png" alt="Патронаж Сервис">
+					</a>
+				</div>
+				<div class="col-md-2 col-sm-12 ">
+					<span class="phone">8 800 000 000 000</span>
+				</div>
+				<div class="col-md-6 col-sm-12 ">
+					<p class="offset-top-10">Будни: 8:00 — 20:00</p>
+					<p>Выходные: 9:00 — 18:00</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<section id="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 text-center">
+					<p>20017 &copy; Все права защищены</p>
+				</div>
+			</div>
+		</div>
+	</section>
+<div class="modal fade" id="policyModal" tabindex="-1" role="dialog" aria-labelledby="policyModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+				<div class="modal-header">
+					<a class="close" data-dismiss="modal" aria-label="Close"><span class="icon-cancel" aria-hidden="true"></span></a>
+					<h4 class="modal-title" id="policyModalLabel">Пользовательское соглашение</h4>
+				</div>
+				<div class="modal-body">
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Закрыть</button>
+				</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+	<!--<script type="text/javascript" src="js/jquery-min.js"></script>-->
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/plugins.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	
+</body>
+</html>
