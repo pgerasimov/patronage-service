@@ -44,4 +44,8 @@ def create_app():
     def login_process():
         return 'ok'
 
+    @app.route('/anketa')
+    def anketa():
+        return render_template('anketa.html')
+
     return app
