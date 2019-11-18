@@ -1,16 +1,16 @@
-from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, DateField
+from flask_wtf import FlaskForm, validators
+from wtforms import StringField, SubmitField, DateField, SelectField, TextAreaField
 
 
 class ProfileForm(FlaskForm):
     lastname = StringField(
-        'Фамилия',
+        'Фамилия*',
         render_kw={
             "class": "form-control",
             "type": "text"})
 
     name = StringField(
-        'Имя',
+        'Имя*',
         render_kw={
             "class": "form-control",
             "type": "text"})
@@ -21,11 +21,20 @@ class ProfileForm(FlaskForm):
             "class": "form-control",
             "type": "text"})
 
-    birthdat = DateField(
-        'Дата рождения',
+    birthdate = DateField(
+        'Дата рождения*',
         render_kw={
             "class": "form-control date",
-            "type": "date"})
+        })
+
+    gender = SelectField(choices=[('1', 'Мужской'), ('2', 'Женский')])
+
+    bio = TextAreaField(u'Mailing Address'
+                        'О себе',
+                        render_kw={
+                            "class": "form-control",
+                            "type": "text",
+                            "placeholder": "Расскажите кратко о себе и своем опыте"})
 
     submit_search = SubmitField(
         'Зарегистрироваться',
