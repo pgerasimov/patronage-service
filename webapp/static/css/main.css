@@ -439,7 +439,6 @@ select::-ms-expand {
 
 .dp-wrapper{position:relative;}
 .dp-wrapper:after{
-	content:'\e805';
 	display: block;
 	width: 26px;
 	height: 26px;
