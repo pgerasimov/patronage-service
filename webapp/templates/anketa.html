@@ -75,35 +75,42 @@
 									</div>
 									<div class="media-body">
 										<h4>Персональная информация</h4>
-										<div class="form-group">
-											<label for="surname">Фамилия *</label>
-											<input type="text" class="form-control" name="surname" id="surname">
+										<div class="form-group" action="">
+											{{ form.hidden_tag() }}
+
+											{{ form.lastname.label }}
+											{{ form.lastname }}
 										</div>
 										<div class="form-group">
-											<label for="name">Имя *</label>
-											<input type="text" class="form-control" name="name" id="name">
+											{{ form.name.label }}
+											{{ form.name }}
 										</div>
 										<div class="form-group">
-											<label for="mname">Отчество *</label>
-											<input type="text" class="form-control" name="mname" id="mname">
+											{{ form.fathername.label }}
+											{{ form.fathername }}
 										</div>
 										<div class="form-group">
 											<div class="row">
-												<div class="col-sm-5">
-													<label for="birthdate">Дата рождения *</label>
-													<div class="dp-wrapper"><input type="text" class="form-control date" id="birthdate"></div>
+												<div >
+													{{ form.birthdate.label }}
+													<div class="dp-wrapper">{{ form.birthdate }}</div>
 												</div>
+												<br>
 												<div class="col-sm-7">
 													<label>Пол *</label><br/>
-													<input type="radio" name="sex" id="s0" value><label for="s0">Женский</label>
-													<input type="radio" name="sex" id="s1" value><label for="s1">Мужской</label>
+													<div class="select-wrapper">
+													{{ form.gender }}
+													</div>
+
 												</div>
 											</div>
 										</div>
 										<div class="form-group">
-											<label for="about">О себе *</label>
-											<textarea class="form-control" name="txt" id="about" placeholder="Расскажите кратко о себе и своем опыте"></textarea>
+											<label>О себе *</label>
+											{{ form.bio }}
 										</div>
+
+
 										<h4>Контактная информация</h4>
 										<div class="form-group">
 											<label for="phone">Телефон *</label>
