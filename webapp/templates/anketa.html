@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 	<title>Анкета соискателя - Патронаж Сервис</title>
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="format-detection" content="telephone=no">
+
 	
 	<link rel="stylesheet" href="static/css/bootstrap.min.css">
 	<link rel="stylesheet" href="static/css/bootstrap-datepicker.min.css">
@@ -66,10 +67,10 @@
 					<div class="col-md-10 col-xs-12 col-md-offset-1">
 						<h3 class="text-center text-white lg">Чтобы попасть в базу наших специалистов,<br/>заполните анкету ниже</h3>
 						<div class="box anketa offset-top-75">
-							<form action="" method="post" id="anketa-form">
+							<form action="{{ url_for('add_worker') }}" method="post" id="anketa-form", accept-charset="UTF-8">
 								<div class="media">
 									<div class="media-left">
-										<label for="about">Фото *</label>
+										<label>Фото *</label>
 										<div class="photo"></div>
 										<p>Рекомендуем загружать фото не менее 500*500 пикселей, желательно в полный рост, т.к. многие пользователи сервиса при выборе помощника будут ориентироваться на ваши физические возможности</p>
 									</div>
@@ -91,9 +92,9 @@
 										</div>
 										<div class="form-group">
 											<div class="row">
-												<div >
-													{{ form.birthdate.label }}
-													<div class="dp-wrapper">{{ form.birthdate }}</div>
+												<div>
+													{{ form.age.label }}
+													<div class="dp-wrapper">{{ form.age }}</div>
 												</div>
 												<br>
 												<div class="col-sm-7">
@@ -109,7 +110,6 @@
 											<label>О себе *</label>
 											{{ form.bio }}
 										</div>
-
 
 										<h4>Контактная информация</h4>
 										<div class="form-group">
@@ -149,13 +149,13 @@
 										<div class="form-group">
 											<label>Занятость</label>
 											<div class="checkbox">
-												<input type="checkbox" value="" id="ch8"><label for="ch8">Полная занятость (5/2 или 6/1)</label>
+												<input type="checkbox" value="1" id="ch8" name="check"><label for="ch8">Полная занятость (5/2 или 6/1)</label>
 											</div>
 											<div class="checkbox">
-												<input type="checkbox" value="" id="ch9"><label for="ch9">Частичная занятость</label>
+												<input type="checkbox" value="2" id="ch9" name="check"><label for="ch9">Частичная занятость</label>
 											</div>
 											<div class="checkbox">
-												<input type="checkbox" value="" id="ch10"><label for="ch10">С проживанием</label>
+												<input type="checkbox" value="3" id="ch10" name="check"><label for="ch10">С проживанием</label>
 											</div>
 										</div>
 										<h4>Список навыков</h4>
@@ -249,8 +249,9 @@
 									</div>
 								</div>
 								<div class="text-center">
-									<button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+									    {{ form.submit_search }}
 									<p class="text-muted">
+									<hr>
 										Регистрируясь вы принимаете условия<br/>
 										<a data-toggle="modal" href="policy.html" data-target="#policyModal">Пользовательского соглашения</а>
 									</p>
@@ -267,7 +268,7 @@
 			<div class="row">
 				<div class="col-md-4 col-sm-12">
 					<a href="index.html" class="logo">
-						<img src="img/logo-footer.png" alt="Патронаж Сервис">
+						<img src="static/img/logo-footer.png" alt="Патронаж Сервис">
 					</a>
 				</div>
 				<div class="col-md-2 col-sm-12 ">
@@ -284,7 +285,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 text-center">
-					<p>20017 &copy; Все права защищены</p>
+					<p>2019 &copy; Все права защищены</p>
 				</div>
 			</div>
 		</div>
