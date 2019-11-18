@@ -24,9 +24,12 @@ class Users(db.Model, UserMixin):
 
 class Worker(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(200), nullable=False)
+    lastname = db.Column(db.String(200), nullable=False)
+    fathername = db.Column(db.String(200), nullable=True)
     address = db.Column(db.String(200), nullable=True)
-    gender = db.Column(db.String(10), nullable=True)
-    age = db.Column(db.Integer, nullable=True)
+    gender = db.Column(db.String(10), nullable=False)
+    birthdate = db.Column(db.Integer, nullable=False)
     photo = db.Column(db.String(200), nullable=True,
                       default='https://southatlanticpackaging.com/wp-content/uploads/2017/07/placeholder-person.gif')
     bio = db.Column(db.String(1000), nullable=True, default='Нет подробного описания')

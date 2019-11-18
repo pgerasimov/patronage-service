@@ -1,4 +1,6 @@
 from flask import Flask, render_template
+
+from webapp.forms import ProfileForm
 from webapp.model import db
 
 def create_app():
@@ -46,6 +48,7 @@ def create_app():
 
     @app.route('/anketa')
     def anketa():
-        return render_template('anketa.html')
+        form = ProfileForm()
+        return render_template('anketa.html', form=form)
 
     return app
