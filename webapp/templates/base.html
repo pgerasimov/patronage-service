@@ -62,12 +62,20 @@
 			</nav>
 		</div>
 	</header>
+	{% block content %}
+
+		{% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="alert alert-warning" role="alert">
+            {% for message in messages %}
+            {{ message }}<br>
+            {% endfor %}
+        </div>
+        {% endif %}
+		{% endwith %}
 
 
-    {% block content %}
-
-
-    {% endblock %}
+	{% endblock %}
 
 	<footer class="page_footer ds section_padding_top_50 section_padding_bottom_65 columns_padding_25 table_section">
 		<div class="container">
