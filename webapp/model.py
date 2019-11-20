@@ -26,7 +26,6 @@ class Worker(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(200), nullable=False)
     surname = db.Column(db.String(200), nullable=False)
-    mname = db.Column(db.String(200), nullable=True)
     gender = db.Column(db.String(10), nullable=False)
     age = db.Column(db.Integer, nullable=False)
     phone = db.Column(db.String(200), nullable = True)
@@ -38,12 +37,13 @@ class Worker(db.Model):
     priceto = db.Column(db.Integer, nullable=True)
     experience = db.Column(db.Integer, nullable=False)
     shedule = db.Column(db.Integer, nullable=True)
+    medical = db.Column(db.Integer, nullable=True, default=0)
+
 
 
 class Properties(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     patient_age = db.Column(db.String(100), nullable=True, default=0)
-    medical = db.Column(db.Integer, nullable=True, default=0)
     recomendations = db.Column(db.Integer, nullable=True, default=0)
     isphoto = db.Column(db.Integer, nullable=True, default=0)
     isrewiev = db.Column(db.Integer, nullable=True, default=0)

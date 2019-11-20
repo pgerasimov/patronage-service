@@ -18,7 +18,10 @@ def create_app():
 
     @app.route('/patronage')
     def patronage():
-        return render_template('patronazh.html')
+
+        worker = Worker.query.all()
+
+        return render_template('patronazh.html', worker=worker)
 
     @app.route('/hospital')
     def hospital():
@@ -34,10 +37,8 @@ def create_app():
 
     @app.route('/about')
     def about():
-        worker = Worker.query.filter_by(email='gerasimov8611@gmail.com').all()
-        woker_prop = Properties.query.filter_by(worker_id='3').all()
-        print(woker_prop)
-        return render_template('about.html', worker=worker, prop=woker_prop)
+
+        return render_template('about.html')
 
     @app.route('/send_form')
     def send_form():
@@ -60,6 +61,9 @@ def create_app():
     def add_worker():
         all_args = request.form.to_dict()
         all_args.pop('csrf_token')
+        all_args.get('')
+
+        print(all_args)
 
         properties = request.form.getlist("properties")
 
