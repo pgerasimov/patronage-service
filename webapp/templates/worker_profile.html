@@ -14,7 +14,7 @@
 <body>
 
 	<header class="relative">
-		
+
 		{% with messages = get_flashed_messages() %}
         {% if messages %}
         <div class="alert alert-warning" role="alert">
@@ -94,38 +94,35 @@
 										</div>
 										<div class="form-group">
 											<label for="name">Имя *</label>
-											<input type="text" class="form-control" name="name" id="name">
+											<input type="text" class="form-control" name="name" id="name" required>
 										</div>
-										<div class="form-group">
-											<label for="mname">Отчество *</label>
-											<input type="text" class="form-control" name="mname" id="mname">
-										</div>
+
 										<div class="form-group">
 											<div class="row">
 												<div class="col-sm-5">
 													<label for="birthdate">Возраст *</label>
 													<div class="dp-wrapper">
-                                                        <input type="text" class="form-control" name="age" id="birthdate"></div>
+                                                        <input type="text" class="form-control" name="age" id="birthdate" required></div>
 												</div>
 												<div class="col-sm-7">
 													<label>Пол *</label><br/>
-													<input type="radio" name="sex" id="s0" value="female"><label for="s0">Женский</label>
+													<input type="radio" name="sex" id="s0" value="female" checked><label for="s0">Женский</label>
 													<input type="radio" name="sex" id="s1" value="male"><label for="s1">Мужской</label>
 												</div>
 											</div>
 										</div>
 										<div class="form-group">
 											<label for="about">О себе *</label>
-											<textarea class="form-control" name="bio" id="about" placeholder="Расскажите кратко о себе и своем опыте"></textarea>
+											<textarea class="form-control" name="bio" id="about" placeholder="Расскажите кратко о себе и своем опыте" required maxlength="350"></textarea>
 										</div>
 										<h4>Контактная информация</h4>
 										<div class="form-group">
 											<label for="phone">Телефон *</label>
-											<input type="text" class="form-control" name="phone" id="phone">
+											<input type="text" class="form-control" name="phone" id="phone" required>
 										</div>
 										<div class="form-group">
 											<label for="email">E-mail *</label>
-											<input type="email" class="form-control" name="email" id="email">
+											<input type="email" class="form-control" name="email" id="email" required>
 										</div>
 <!--										<div class="form-group">-->
 <!--											<label for="password">Пароль *</label>-->
@@ -139,24 +136,24 @@
 													<div class="flex">
 														<div class="input-group">
 															<div class="input-group-addon">от</div>
-															<input type="text" class="form-control" name="pricefrom" id="pricefrom">
+															<input type="text" class="form-control" name="pricefrom" id="pricefrom" required>
 														</div>
 														<div class="input-group">
 															<div class="input-group-addon">до</div>
-															<input type="text" class="form-control" name="priceto" id="priceto">
+															<input type="text" class="form-control" name="priceto" id="priceto" required>
 														</div>
 													</div>
 												</div>
 												<div class="col-sm-5">
 													<label for="exp">Опыт работы, лет *</label>
-													<input type="text" class="form-control" name="experience" id="exp">
+													<input type="text" class="form-control" name="experience" id="exp" required>
 												</div>
 											</div>
 										</div>
 										<div class="form-group">
 											<label>Занятость</label>
 											<div class="checkbox">
-												<input type="checkbox" value="0" id="ch81" name="shedule"><label for="ch81">Любая</label>
+												<input type="checkbox" value="0" id="ch81" name="shedule" checked><label for="ch81">Любая</label>
 											</div>
 											<div class="checkbox">
 												<input type="checkbox" value="1" id="ch8" name="shedule"><label for="ch8">Полная занятость (5/2 или 6/1)</label>
@@ -244,7 +241,7 @@
 											</div>
 											<div class="col-sm-6">
 												<div class="checkbox">
-													<input type="checkbox" value="medical" id="ch29" name="properties"><label for="ch29" >Медицинское образование</label>
+													<input type="checkbox" value="medical" id="ch29" name="medical"><label for="ch29" >Медицинское образование</label>
 												</div>
 												<div class="checkbox">
 													<input type="checkbox" value="recomendations" id="ch30" name="properties"><label for="ch30" >Рекомендации</label>
