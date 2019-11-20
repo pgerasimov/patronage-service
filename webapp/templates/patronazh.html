@@ -3,6 +3,16 @@
 
 {% block content %}
 
+		{% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="alert alert-warning" role="alert">
+            {% for message in messages %}
+            {{ message }}<br>
+            {% endfor %}
+        </div>
+        {% endif %}
+		{% endwith %}
+
 	<main>
 		<section class="mainbg section-2">
 			<div class="container">
