@@ -1,4 +1,5 @@
 from webapp import Worker, Properties, db
+from webapp.get_exp_age import get_exp, get_age
 
 
 def add_new_worker(all_args, properties, client_age):
@@ -10,11 +11,14 @@ def add_new_worker(all_args, properties, client_age):
         if item in properties_map.keys():
             properties_map[item] = 1
 
+    age = get_age(all_args['age'])
+    exp = get_exp(all_args['experience'])
+
     new_worker = Worker(
         surname=all_args['surname'], name=all_args['name'],
-        age=all_args['age'], bio=all_args['bio'], phone=all_args['phone'],
+        age=age, bio=all_args['bio'], phone=all_args['phone'],
         email=all_args['email'], pricefrom=all_args['pricefrom'], priceto=all_args['priceto'],
-        experience=all_args['experience'], medical=all_args.get('medical', 'nomed'), shedule=all_args['shedule'], gender=all_args['sex'])
+        experience=exp, medical=all_args.get('medical', 'nomed'), shedule=all_args['shedule'], gender=all_args['sex'])
 
     db.session.add(new_worker)
     db.session.commit()

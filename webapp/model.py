@@ -35,7 +35,7 @@ class Worker(db.Model):
     bio = db.Column(db.String(1000), nullable=True, default='Нет подробного описания')
     pricefrom = db.Column(db.Integer, nullable=True)
     priceto = db.Column(db.Integer, nullable=True)
-    experience = db.Column(db.Integer, nullable=False)
+    experience = db.Column(db.String(20), nullable=False)
     shedule = db.Column(db.Integer, nullable=True)
     medical = db.Column(db.Integer, nullable=True, default=0)
 
