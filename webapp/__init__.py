@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request, flash, url_for, redirect
 
-from webapp.forms import ProfileForm
+from webapp.forms import ProfileForm, SearchForm
 from webapp.model import db, Worker, Properties
 from webapp.new_worker import add_new_worker
+from webapp.search_worker import search_worker
 
 
 def create_app():
@@ -63,8 +64,6 @@ def create_app():
         all_args.pop('csrf_token')
         all_args.get('')
 
-        print(all_args)
-
         properties = request.form.getlist("properties")
 
         client_age = request.form.getlist("client-age")
@@ -78,5 +77,20 @@ def create_app():
 
         flash('Пользователь успешно добавлен!')
         return redirect(url_for('patronage'))
+
+    @app.route('/search_results', methods=['POST'])
+    def search_results():
+        form = SearchForm()
+
+        options = request.form.getlist("search_request")
+        gender = request.form.getlist("gender")
+        age = request.form.getlist('age')
+        price = request.form.getlist('price')
+        patient_age = request.form.getlist('patient_age')
+        shedule = request.form.getlist('shedule')
+
+        worker = search_worker(options, gender, age, price, patient_age, shedule)
+
+        return render_template('search_results.html', worker=worker)
 
     return app

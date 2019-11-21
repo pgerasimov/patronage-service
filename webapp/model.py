@@ -28,8 +28,9 @@ class Worker(db.Model):
     surname = db.Column(db.String(200), nullable=False)
     gender = db.Column(db.String(10), nullable=False)
     age = db.Column(db.Integer, nullable=False)
-    phone = db.Column(db.String(200), nullable = True)
-    email = db.Column(db.String(200), nullable = False)
+    phone = db.Column(db.String(200), nullable=True)
+    email = db.Column(db.String(200), nullable=False)
+    address = db.Column(db.String(200), nullable=True)
     photo = db.Column(db.String(200), nullable=True,
                       default='https://southatlanticpackaging.com/wp-content/uploads/2017/07/placeholder-person.gif')
     bio = db.Column(db.String(1000), nullable=True, default='Нет подробного описания')
@@ -38,7 +39,6 @@ class Worker(db.Model):
     experience = db.Column(db.String(20), nullable=False)
     shedule = db.Column(db.Integer, nullable=True)
     medical = db.Column(db.Integer, nullable=True, default=0)
-
 
 
 class Properties(db.Model):
@@ -63,5 +63,3 @@ class Properties(db.Model):
     walking = db.Column(db.Integer, nullable=True, default=0)
     client_age = db.Column(db.Integer, nullable=False, default=0)
     worker_id = db.Column(db.Integer, db.ForeignKey('worker.id'))
-
-

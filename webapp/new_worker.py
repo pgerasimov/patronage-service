@@ -17,8 +17,9 @@ def add_new_worker(all_args, properties, client_age):
     new_worker = Worker(
         surname=all_args['surname'], name=all_args['name'],
         age=age, bio=all_args['bio'], phone=all_args['phone'],
-        email=all_args['email'], pricefrom=all_args['pricefrom'], priceto=all_args['priceto'],
-        experience=exp, medical=all_args.get('medical', 'nomed'), shedule=all_args['shedule'], gender=all_args['sex'])
+        email=all_args['email'], address=all_args['address'], pricefrom=int(all_args['pricefrom']),
+        priceto=int(all_args['priceto']),
+        experience=exp, medical=all_args.get('medical', 0), shedule=all_args['shedule'], gender=all_args['sex'])
 
     db.session.add(new_worker)
     db.session.commit()

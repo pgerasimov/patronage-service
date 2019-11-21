@@ -7,3 +7,7 @@ class User(FlaskForm):
 
 class ProfileForm(FlaskForm):
     pass
+
+
+class SearchForm(FlaskForm):
+    pass
