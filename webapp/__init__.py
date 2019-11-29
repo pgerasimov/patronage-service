@@ -84,12 +84,13 @@ def create_app():
 
         options = request.form.getlist("search_request")
         gender = request.form.getlist("gender")
-        age = request.form.getlist('age')
-        price = request.form.getlist('price')
-        patient_age = request.form.getlist('patient_age')
+        agefrom = request.form.getlist('agefrom')
+        ageto = request.form.getlist('ageto')
+        pricefrom = request.form.getlist('pricefrom')
+        priceto = request.form.getlist('priceto')
         shedule = request.form.getlist('shedule')
 
-        worker = search_worker(options, gender, age, price, patient_age, shedule)
+        worker = search_worker(options, priceto, pricefrom, agefrom, ageto, gender, shedule)
 
         return render_template('search_results.html', worker=worker)
 
