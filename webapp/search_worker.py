@@ -27,7 +27,7 @@ def search_worker(options, priceto, pricefrom, agefrom, ageto, gender, shedule):
     request = request[:-4]
 
     if gender:
-        request = f'{request} AND gender = {gender[0]}'
+        request = f'{request} AND gender = "{gender[0]}"'
 
     if shedule:
         request = f'{request} AND shedule = {shedule[0]}'
