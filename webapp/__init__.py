@@ -6,7 +6,7 @@ from webapp.new_worker import add_new_worker
 from webapp.search_worker import search_worker
 
 #TODO: добавить логирование
-#TODO: добавить переход на страницу работника
+#TODO: добавить переход на страницу работника /profile/<id>
 #TODO: добавить статистику просмотра контактов
 #TODO: добавить статистику на главную
 #TODO: добавить стационары
