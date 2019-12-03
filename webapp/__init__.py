@@ -5,6 +5,13 @@ from webapp.model import db, Worker, Properties
 from webapp.new_worker import add_new_worker
 from webapp.search_worker import search_worker
 
+#TODO: добавить логирование
+#TODO: добавить переход на страницу работника
+#TODO: добавить статистику просмотра контактов
+#TODO: добавить статистику на главную
+#TODO: добавить стационары
+
+
 
 def create_app():
     app = Flask(__name__)
@@ -91,6 +98,11 @@ def create_app():
         shedule = request.form.getlist('shedule')
 
         worker = search_worker(options, priceto, pricefrom, agefrom, ageto, gender, shedule)
+
+        for i in worker:
+            print(i)
+            for j in i:
+                print(j)
 
         return render_template('search_results.html', worker=worker)
 

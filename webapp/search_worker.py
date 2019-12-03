@@ -1,5 +1,7 @@
 from sqlalchemy import create_engine, text
 
+from webapp import Worker
+
 
 def search_worker(options, priceto, pricefrom, agefrom, ageto, gender, shedule):
     engine = create_engine('sqlite:///webapp.db')
@@ -39,7 +41,6 @@ def search_worker(options, priceto, pricefrom, agefrom, ageto, gender, shedule):
         f'WHERE pricefrom >= {pricefrom} AND priceto <= {priceto} AND age >= {agefrom} AND age <= {ageto} {request}'))
 
     for i in result:
-        workers.append(i[0])
-    print(workers)
+        workers.append(Worker.query.filter(Worker.id == i[0]).all())
 
-    return 'ok'
+    return workers
