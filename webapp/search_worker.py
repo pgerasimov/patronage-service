@@ -26,11 +26,17 @@ def search_worker(options, priceto, pricefrom, agefrom, ageto, gender, shedule):
 
     request = request[:-4]
 
+    if gender:
+        request = f'{request} AND gender = {gender[0]}'
+
+    if shedule:
+        request = f'{request} AND shedule = {shedule[0]}'
+
     result = connection.execute(text(
         f'SELECT Worker.id '
         f'FROM Worker '
         f'INNER JOIN Properties ON Properties.`worker_id` = Worker.`id` '
-        f'WHERE Worker.pricefrom >= {pricefrom} AND Worker.priceto <= {priceto} AND Worker.age >= {agefrom} AND Worker.age <= {ageto} {request}'))
+        f'WHERE pricefrom >= {pricefrom} AND priceto <= {priceto} AND age >= {agefrom} AND age <= {ageto} {request}'))
 
     for i in result:
         workers.append(i[0])

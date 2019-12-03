@@ -83,7 +83,7 @@ def create_app():
         form = SearchForm()
 
         options = request.form.getlist("search_request")
-        gender = request.form.get("gender")
+        gender = request.form.getlist("gender")
         agefrom = request.form.get('agefrom')
         ageto = request.form.get('ageto')
         pricefrom = request.form.get('pricefrom')
