@@ -88,7 +88,7 @@ def create_app():
         ageto = request.form.get('ageto')
         pricefrom = request.form.get('pricefrom')
         priceto = request.form.get('priceto')
-        shedule = request.form.get('shedule')
+        shedule = request.form.getlist('shedule')
 
         worker = search_worker(options, priceto, pricefrom, agefrom, ageto, gender, shedule)
 

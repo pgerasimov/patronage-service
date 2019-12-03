@@ -18,7 +18,7 @@ def add_new_worker(all_args, properties, client_age):
         age=all_args['age'], bio=all_args['bio'], phone=all_args['phone'],
         email=all_args['email'], address=all_args['address'], pricefrom=int(all_args['pricefrom']),
         priceto=int(all_args['priceto']),
-        experience=exp, medical=all_args.get('medical', 0), shedule=all_args['shedule'], gender=all_args['sex'])
+        experience=exp, shedule=all_args['shedule'], gender=all_args['sex'])
 
     db.session.add(new_worker)
     db.session.commit()
@@ -34,7 +34,7 @@ def add_new_worker(all_args, properties, client_age):
         lfk=properties_map['lfk'], cooking=properties_map['cooking'],
         buyfood=properties_map['buyfood'],
         cleaning=properties_map['cleaning'], walking=properties_map['walking'],
-        patient_age=client_age, worker_id=new_worker.id)
+        patient_age=client_age, medical=all_args.get('medical', 0), worker_id=new_worker.id)
     db.session.add(new_worker_properties)
     db.session.commit()
 

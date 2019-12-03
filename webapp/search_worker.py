@@ -1,56 +1,39 @@
-from sqlalchemy import create_engine
-from sqlalchemy.orm import Session, sessionmaker
-
-from webapp import Worker, Properties
+from sqlalchemy import create_engine, text
 
 
 def search_worker(options, priceto, pricefrom, agefrom, ageto, gender, shedule):
-    Session = sessionmaker()
     engine = create_engine('sqlite:///webapp.db')
-    Session.configure(bind=engine)
-    sess = Session()
+    connection = engine.connect()
 
+    priceto = priceto if priceto != '' else '10000'
+    pricefrom = pricefrom if pricefrom != '' else '1'
+    agefrom = agefrom if agefrom != '' else '1'
+    ageto = ageto if ageto != '' else '999'
+
+    request = 'AND'
     workers = []
+
     options_map = {'medical': 0, 'recomendations': 0, 'diabet': 0, 'insult': 0, 'alzheimer': 0, 'dcp': 0, 'bed': 0,
-                   'oncology': 0}
+                   'oncology': 0, 'patient_age': 0}
 
     for option in options:
         if option in options_map.keys():
             options_map[option] = 1
 
-    priceto = priceto if priceto != [''] else '10000'
-    pricefrom = pricefrom if pricefrom != [''] else '1'
-    agefrom = agefrom if agefrom != [''] else '1'
-    ageto = ageto if ageto != [''] else '999'
+    for key, value in options_map.items():
+        if value != 0:
+            request = f'{request} {key} = 1 AND'
 
+    request = request[:-4]
 
-    # if gender != [] and shedule != []:
-    #     worker = Worker.query.filter(Worker.gender == gender[0], Worker.age >= agefrom, Worker.age <= ageto,
-    #                                  Worker.pricefrom >= pricefrom, Worker.pricefrom <= priceto,
-    #                                  Worker.shedule == shedule[0]).all()
-    # if gender == [] and shedule != []:
-    #     worker = Worker.query.filter(Worker.age >= agefrom, Worker.age <= ageto,
-    #                                  Worker.pricefrom >= pricefrom, Worker.pricefrom <= priceto,
-    #                                  Worker.shedule == shedule[0]).all()
-    #
-    # if gender != [] and shedule == []:
-    #     worker = Worker.query.filter(Worker.gender == gender[0], Worker.age >= agefrom, Worker.age <= ageto,
-    #                                  Worker.pricefrom >= pricefrom, Worker.pricefrom <= priceto).all()
-    #
-    # if gender == [] and shedule == []:
-    #     worker = Worker.query.filter(Worker.age >= agefrom, Worker.age <= ageto,
-    #                                  Worker.pricefrom >= pricefrom, Worker.pricefrom <= priceto).all()
-    #
-    # print(worker)
+    result = connection.execute(text(
+        f'SELECT Worker.id '
+        f'FROM Worker '
+        f'INNER JOIN Properties ON Properties.`worker_id` = Worker.`id` '
+        f'WHERE Worker.pricefrom >= {pricefrom} AND Worker.priceto <= {priceto} AND Worker.age >= {agefrom} AND Worker.age <= {ageto} {request}'))
 
-    # get_workers = (sess.query(Worker, Properties)
-    #                .filter(Worker.age >= agefrom, Worker.age <= ageto, Worker.pricefrom >= pricefrom,
-    #                        Worker.pricefrom <= priceto)
-    #                .filter(Worker.id == Properties.worker_id)
-    #                .filter(Properties.bed == '1')
-    #                .all())
-    # for i in get_workers:
-    #     workers.append(i[0])
-    # print(workers)
-    # print(type(workers[0]))
+    for i in result:
+        workers.append(i[0])
+    print(workers)
+
     return 'ok'
