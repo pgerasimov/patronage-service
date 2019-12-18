@@ -7,9 +7,11 @@ from webapp.search_worker import search_worker
 
 #TODO: добавить логирование
 #TODO: добавить статистику просмотра контактов
+#TODO: добавить последний заход вместо datetime
 #TODO: добавить статистику на главную
 #TODO: добавить стационары
 #TODO: добавить рекомендуемых исполнителей
+#TODO: подумтаь что делать с отзывами
 
 
 
@@ -106,8 +108,6 @@ def create_app():
     def patronazh_item(id):
 
         person = Worker.query.filter(Worker.id == id).all()
-
-        print(person)
 
         return render_template(
             'patronazh_item.html',
