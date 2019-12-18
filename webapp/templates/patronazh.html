@@ -182,8 +182,10 @@
                                     </a>
                                 </div>
                                 <div class="media-body">
-                                    <h3 class="media-heading"><a href="patronage_item">{{ item.surname }} {{ item.name }}
-                                        </a></h3>
+                                    <h3 class="media-heading">
+                                        <a href="{{ url_for('patronazh_item', id = item.id) }}">{{ item.surname }} {{ item.name }}
+                                        </a>
+                                    </h3>
                                     <p>{{ item.address }}</p>
                                     <p>Возраст: {{ item.age }},
 

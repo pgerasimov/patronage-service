@@ -6,10 +6,10 @@ from webapp.new_worker import add_new_worker
 from webapp.search_worker import search_worker
 
 #TODO: добавить логирование
-#TODO: добавить переход на страницу работника /profile/<id>
 #TODO: добавить статистику просмотра контактов
 #TODO: добавить статистику на главную
 #TODO: добавить стационары
+#TODO: добавить рекомендуемых исполнителей
 
 
 
@@ -34,10 +34,6 @@ def create_app():
     @app.route('/hospital')
     def hospital():
         return render_template('stacionar.html')
-
-    @app.route('/patronage_item')
-    def patronage_item():
-        return render_template('patronazh_item.html')
 
     @app.route('/hospital_item')
     def hospital_item():
@@ -105,5 +101,16 @@ def create_app():
                 print(j)
 
         return render_template('search_results.html', worker=worker)
+
+    @app.route('/patronazh_item/<id>')
+    def patronazh_item(id):
+
+        person = Worker.query.filter(Worker.id == id).all()
+
+        print(person)
+
+        return render_template(
+            'patronazh_item.html',
+            person=person)
 
     return app

@@ -1,6 +1,17 @@
  {% extends 'base.html' %}
 
  {% block content %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="alert alert-warning" role="alert">
+    {% for message in messages %}
+    {{ message }}<br>
+    {% endfor %}
+</div>
+{% endif %}
+{% endwith %}
+
+
 
 	<main>
 		<section class="mainbg person_card section-1">
@@ -13,8 +24,8 @@
 								<p class="status">Заходил сегодня в 14:33</p>
 								<div class="media">
 									<div class="media-left pic">
-										<a href="static/img/face.jpg" target="_blank" data-fancybox data-caption="Евгения Ивановна К.">
-											<img src="static/img/face.jpg" alt="Евгения Ивановна К." class="img-circle"/>
+										<a href="../static/img/face.jpg" target="_blank" data-fancybox data-caption="Евгения Ивановна К.">
+											<img src="../static/img/face.jpg" alt="Евгения Ивановна К." class="img-circle"/>
 										</a>
 										<small>Кликните на фото,<br/>чтобы увеличить</small>
 									</div>
@@ -136,7 +147,7 @@
 							<div class="media">
 								<div class="media-left">
 									<a href="patronazh_item.html">
-										<img class="media-object" src="static/img/face4.jpg" alt="Константин Константинович К." />
+										<img class="media-object" src="../static/img/face4.jpg" alt="Константин Константинович К." />
 									</a>
 								</div>
 								<div class="media-body">
@@ -166,7 +177,7 @@
 							<div class="media">
 								<div class="media-left">
 									<a href="patronazh_item.html">
-										<img class="media-object" src="static/img/face2.jpg" alt="Константин Константинович К." />
+										<img class="media-object" src="../static/img/face2.jpg" alt="Константин Константинович К." />
 									</a>
 								</div>
 								<div class="media-body">
@@ -196,7 +207,7 @@
 							<div class="media">
 								<div class="media-left">
 									<a href="patronazh_item.html">
-										<img class="media-object" src="static/img/face.jpg" alt="Ирина Николаевна Ч." />
+										<img class="media-object" src="../static/img/face.jpg" alt="Ирина Николаевна Ч." />
 									</a>
 								</div>
 								<div class="media-body">
