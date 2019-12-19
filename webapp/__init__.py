@@ -5,6 +5,7 @@ from webapp.model import db, Worker, Properties
 from webapp.new_worker import add_new_worker
 from webapp.search_worker import search_worker
 
+#TODO: Список навыков + занятость !!!
 #TODO: добавить логирование
 #TODO: добавить статистику просмотра контактов
 #TODO: добавить последний заход вместо datetime
@@ -97,20 +98,19 @@ def create_app():
 
         worker = search_worker(options, priceto, pricefrom, agefrom, ageto, gender, shedule)
 
-        for i in worker:
-            print(i)
-            for j in i:
-                print(j)
-
         return render_template('search_results.html', worker=worker)
 
     @app.route('/patronazh_item/<id>')
     def patronazh_item(id):
 
         person = Worker.query.filter(Worker.id == id).all()
+        properties = Properties.query.filter(Properties.worker_id == id).all()
+
+        print(properties)
 
         return render_template(
             'patronazh_item.html',
-            person=person)
+            person=person,
+            properties=properties)
 
     return app

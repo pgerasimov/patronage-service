@@ -93,7 +93,40 @@
                                 </div>
 
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="skills">Навыки123123</div>
+                            {% for prop in properties %}
+                            <div role="tabpanel" class="tab-pane " id="skills">
+                                <table class="table table-striped">
+                                     {% if prop.patient_age == any %}
+                                     <tr>
+                                        <td>Пациенты любого возраста</td>
+                                    </tr>
+                                     {% if prop.patient_age == any %}
+                                     <tr>
+                                        <td>Пациенты любого возраста</td>
+                                    </tr>
+                                    {% endif %}
+
+                                    {% if prop.recomendations == 1%}
+                                        <tr>
+                                            <td>Есть рекомендации</td>
+
+                                        </tr>
+                                    {% endif %}
+
+                                    <tr>
+                                        <td>{{ prop.patient_age }}</td>
+                                    </tr>
+
+                                    {% if prop.oncology == 1 %}
+                                     <tr>
+                                        <td>Онкология</td>
+                                    </tr>
+                                    {% endif %}
+                                </table>
+
+                            </div>
+
+
                             <div role="tabpanel" class="tab-pane" id="review">
 
                                 <div class="review">
@@ -132,6 +165,8 @@
         </div>
 
         {% endfor %}
+        {% endfor %}
+
 
     </section>
     <section class="mainbg section-3">
