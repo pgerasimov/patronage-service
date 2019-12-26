@@ -32,7 +32,7 @@
                                     <small>Кликните на фото,<br/>чтобы увеличить</small>
                                 </div>
                                 <div class="media-body">
-                                    <h3 class="media-heading">{{ item.name }}{{ item.surname }}</h3>
+                                    <h3 class="media-heading">{{ item.name }} {{ item.surname }}</h3>
                                     <p>{{ item.address }}</p>
                                     <h3>О себе</h3>
                                     <p>{{ item.bio }}</p>
@@ -78,7 +78,7 @@
                                         <tr>
                                             <td>Мед. образование</td>
 
-                                            {% if item.medical == 'medical' %}
+                                            {% if item.medical == 1 %}
 
                                             <td>Есть</td>
 
@@ -87,41 +87,125 @@
                                             <td>Нет</td>
 
                                             {% endif %}
-
                                         </tr>
                                     </table>
                                 </div>
 
                             </div>
-                            {% for prop in properties %}
+
                             <div role="tabpanel" class="tab-pane " id="skills">
                                 <table class="table table-striped">
-                                     {% if prop.patient_age == any %}
-                                     <tr>
-                                        <td>Пациенты любого возраста</td>
-                                    </tr>
-                                     {% if prop.patient_age == any %}
-                                     <tr>
-                                        <td>Пациенты любого возраста</td>
-                                    </tr>
-                                    {% endif %}
-
-                                    {% if prop.recomendations == 1%}
-                                        <tr>
-                                            <td>Есть рекомендации</td>
-
-                                        </tr>
-                                    {% endif %}
-
+                                    {% if item.patient_age == any %}
                                     <tr>
-                                        <td>{{ prop.patient_age }}</td>
+                                        <td>Пациенты любого возраста</td>
+                                    </tr>
+                                    {% endif %}
+
+                                    {% if item.patient_age == 'any' %}
+                                    <tr>
+                                        <td>Пациенты любого возраста</td>
                                     </tr>
 
-                                    {% if prop.oncology == 1 %}
-                                     <tr>
+                                    {% else %}
+                                    <tr>
+                                        <td>Пациенты {{ item.patient_age }} лет</td>
+                                    </tr>
+
+                                    {% endif %}
+
+                                    {% if item.recomendations == 1%}
+                                    <tr>
+                                        <td>Есть рекомендации</td>
+
+                                    </tr>
+                                    {% endif %}
+
+
+                                    {% if item.diabet == 1 %}
+                                    <tr>
+                                        <td>Сахарный диабет</td>
+                                    </tr>
+                                    {% endif %}
+
+                                    {% if item.insult == 1 %}
+                                    <tr>
+                                        <td>После инсульта</td>
+                                    </tr>
+                                    {% endif %}
+
+                                    {% if item.alzheimer == 1 %}
+                                    <tr>
+                                        <td>Болезнь Альцгеймера</td>
+                                    </tr>
+                                    {% endif %}
+
+                                    {% if item.dcp == 1 %}
+                                    <tr>
+                                        <td>ДЦП</td>
+                                    </tr>
+                                    {% endif %}
+
+                                    {% if item.bed == 1 %}
+                                    <tr>
+                                        <td>Лежачие больные</td>
+                                    </tr>
+                                    {% endif %}
+
+                                    {% if item.oncology == 1 %}
+                                    <tr>
                                         <td>Онкология</td>
                                     </tr>
                                     {% endif %}
+
+                                    {% if item.hygiene == 1 %}
+                                    <tr>
+                                        <td>Гигиенические процедуры</td>
+                                    </tr>
+                                    {% endif %}
+
+                                    {% if item.injections == 1 %}
+                                    <tr>
+                                        <td>Уколы</td>
+                                    </tr>
+                                    {% endif %}
+
+                                    {% if item.dropper == 1 %}
+                                    <tr>
+                                        <td>Установка капельниц</td>
+                                    </tr>
+                                    {% endif %}
+
+                                    {% if item.lfk == 1 %}
+                                    <tr>
+                                        <td>Проведение ЛФК</td>
+                                    </tr>
+                                    {% endif %}
+
+                                    {% if item.cooking == 1 %}
+                                    <tr>
+                                        <td>Приготовление еды</td>
+                                    </tr>
+                                    {% endif %}
+
+                                    {% if item.buyfood == 1 %}
+                                    <tr>
+                                        <td>Покупка продуктов</td>
+                                    </tr>
+                                    {% endif %}
+
+                                    {% if item.cleaning == 1 %}
+                                    <tr>
+                                        <td>Уборка дома</td>
+                                    </tr>
+                                    {% endif %}
+
+                                    {% if item.walking == 1 %}
+                                    <tr>
+                                        <td>Прогулки</td>
+                                    </tr>
+                                    {% endif %}
+
+
                                 </table>
 
                             </div>
@@ -152,9 +236,22 @@
                     </div>
                     <h4>Занятость</h4>
                     <ul>
+
+                        {% if item.shedule == 0 %}
+                        <li>Любая занятость</li>
+                        {% endif %}
+                        {% if item.shedule == 1 %}
                         <li>Полная занятость (5/2 или 6/1)</li>
+                        {% endif %}
+
+                        {% if item.shedule == 2 %}
                         <li>Частичная занятость</li>
+                        {% endif %}
+
+                        {% if item.shedule == 3 %}
                         <li>С проживанием</li>
+                        {% endif %}
+
                     </ul>
                     <!--						<h4>Доступность</h4>-->
                     <!--						<ul>-->
@@ -164,7 +261,6 @@
             </div>
         </div>
 
-        {% endfor %}
         {% endfor %}
 
 

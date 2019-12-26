@@ -185,14 +185,14 @@
                                 </div>
                                 <div class="media-body">
                                     <h3 class="media-heading">
-                                        <a href="{{ url_for('profile', id = worker.id) }}">{{ worker.surname }} {{ worker.name }}
+                                        <a href="{{ url_for('patronazh_item', id = worker.id) }}">{{ worker.surname }} {{ worker.name }}
                                         </a>
                                     </h3>
                                     <p>{{ worker.address }}</p>
                                     <p>Возраст: {{ worker.age }},
 
 
-                                        {% if worker.medical == 'medical' %}
+                                        {% if med == 1 %}
 
                                         есть медицинское образование</p>
 
