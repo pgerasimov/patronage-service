@@ -6,17 +6,23 @@ from webapp.new_worker import add_new_worker
 from webapp.search_worker import search_worker
 
 
-
+# CRITICAL Priority
 # TODO Refactoring: fix search (without props)
 
+# roadmap
 # TODO: добавить логирование
 # TODO: добавить статистику просмотра контактов
-# TODO: добавить последний заход вместо datetime
+# TODO: добавить последний заход вместо datetime (or del, cuz worker can login)
 # TODO: добавить статистику на главную
-# TODO: добавить стационары
 # TODO: добавить рекомендуемых исполнителей
 # TODO: подумтаь что делать с отзывами
 # TODO: Очистить фильтры
+
+# LOW Priority
+# TODO: админка для добавления стационаров
+# TODO: фильтр стационаров по округам
+
+
 
 
 def create_app():
