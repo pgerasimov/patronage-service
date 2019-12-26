@@ -22,6 +22,8 @@ def search_worker(options, priceto, pricefrom, agefrom, ageto, gender, shedule):
         if option in options_map.keys():
             options_map[option] = 1
 
+    med = options_map['medical']
+
     for key, value in options_map.items():
         if value != 0:
             request = f'{request} {key} = 1 AND'
@@ -43,4 +45,4 @@ def search_worker(options, priceto, pricefrom, agefrom, ageto, gender, shedule):
     for i in result:
         workers.append(Worker.query.filter(Worker.id == i[0]).all())
 
-    return workers
+    return workers, med

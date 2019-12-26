@@ -1,19 +1,22 @@
 from flask import Flask, render_template, request, flash, url_for, redirect
 
 from webapp.forms import ProfileForm, SearchForm
-from webapp.model import db, Worker, Properties
+from webapp.model import db, Worker
 from webapp.new_worker import add_new_worker
 from webapp.search_worker import search_worker
 
-#TODO: Список навыков + занятость !!!
-#TODO: добавить логирование
-#TODO: добавить статистику просмотра контактов
-#TODO: добавить последний заход вместо datetime
-#TODO: добавить статистику на главную
-#TODO: добавить стационары
-#TODO: добавить рекомендуемых исполнителей
-#TODO: подумтаь что делать с отзывами
 
+
+# TODO Refactoring: fix search (without props)
+
+# TODO: добавить логирование
+# TODO: добавить статистику просмотра контактов
+# TODO: добавить последний заход вместо datetime
+# TODO: добавить статистику на главную
+# TODO: добавить стационары
+# TODO: добавить рекомендуемых исполнителей
+# TODO: подумтаь что делать с отзывами
+# TODO: Очистить фильтры
 
 
 def create_app():
@@ -30,9 +33,9 @@ def create_app():
     @app.route('/patronage')
     def patronage():
 
-        worker = Worker.query.all()
+        workers = Worker.query.all()
 
-        return render_template('patronazh.html', worker=worker)
+        return render_template('patronazh.html', worker=workers)
 
     @app.route('/hospital')
     def hospital():
@@ -70,8 +73,6 @@ def create_app():
         all_args.pop('csrf_token')
         all_args.get('')
 
-        properties = request.form.getlist("properties")
-
         client_age = request.form.getlist("client-age")
         client_age = ', '.join(client_age)
 
@@ -79,7 +80,7 @@ def create_app():
             flash('Такой пользователь уже есть')
             return redirect(url_for('worker'))
         else:
-            add_new_worker(all_args, properties, client_age)
+            add_new_worker(all_args, client_age)
 
         flash('Пользователь успешно добавлен!')
         return redirect(url_for('patronage'))
@@ -98,19 +99,13 @@ def create_app():
 
         worker = search_worker(options, priceto, pricefrom, agefrom, ageto, gender, shedule)
 
-        return render_template('search_results.html', worker=worker)
+        return render_template('search_results.html', worker=worker[0])
 
     @app.route('/patronazh_item/<id>')
     def patronazh_item(id):
 
         person = Worker.query.filter(Worker.id == id).all()
-        properties = Properties.query.filter(Properties.worker_id == id).all()
 
-        print(properties)
-
-        return render_template(
-            'patronazh_item.html',
-            person=person,
-            properties=properties)
+        return render_template('patronazh_item.html', person=person)
 
     return app
