@@ -8,6 +8,7 @@ from webapp.search_worker import search_worker
 
 
 # roadmap
+# TODO: deploy to heroku app
 # TODO: добавить логирование
 # TODO: добавить статистику просмотра контактов
 # TODO: добавить последний заход вместо datetime (or del, cuz worker can login)
