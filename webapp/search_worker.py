@@ -22,15 +22,15 @@ def search_worker(options, priceto, pricefrom, agefrom, ageto, gender, shedule):
         if option in options_map.keys():
             options_map[option] = 1
 
-    med = options_map['medical']
-
     for key, value in options_map.items():
         if value != 0:
             request = f'{request} {key} = 1 AND'
 
     request = request[:-4]
 
-    if gender:
+    if len(gender) == 2 or not gender:
+        pass
+    else:
         request = f'{request} AND gender = "{gender[0]}"'
 
     if shedule:
@@ -39,10 +39,10 @@ def search_worker(options, priceto, pricefrom, agefrom, ageto, gender, shedule):
     result = connection.execute(text(
         f'SELECT Worker.id '
         f'FROM Worker '
-        f'INNER JOIN Properties ON Properties.`worker_id` = Worker.`id` '
         f'WHERE pricefrom >= {pricefrom} AND priceto <= {priceto} AND age >= {agefrom} AND age <= {ageto} {request}'))
 
     for i in result:
         workers.append(Worker.query.filter(Worker.id == i[0]).all())
+    print(workers)
 
-    return workers, med
+    return workers

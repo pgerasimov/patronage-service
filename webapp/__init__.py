@@ -6,8 +6,6 @@ from webapp.new_worker import add_new_worker
 from webapp.search_worker import search_worker
 
 
-# CRITICAL Priority
-# TODO Refactoring: fix search (without props)
 
 # roadmap
 # TODO: добавить логирование
@@ -103,9 +101,10 @@ def create_app():
         priceto = request.form.get('priceto')
         shedule = request.form.getlist('shedule')
 
+
         worker = search_worker(options, priceto, pricefrom, agefrom, ageto, gender, shedule)
 
-        return render_template('search_results.html', worker=worker[0])
+        return render_template('search_results.html', worker=worker)
 
     @app.route('/patronazh_item/<id>')
     def patronazh_item(id):
