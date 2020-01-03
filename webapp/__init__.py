@@ -10,14 +10,17 @@ from webapp.search_worker import search_worker
 # roadmap
 # TODO: deploy to heroku app
 # TODO: добавить логирование
-# TODO: добавить статистику просмотра контактов
 # TODO: добавить последний заход вместо datetime (or del, cuz worker can't login)
 # TODO: добавить статистику на главную
 # TODO: добавить рекомендуемых исполнителей
-# TODO: подумтаь что делать с отзывами
+# TODO: подумать что делать с отзывами
 # TODO: Очистить фильтры
+# TODO: Basic tests
+# TODO: travice ci
+
 
 # LOW Priority
+# TODO: добавить статистику просмотра контактов
 # TODO: админка для добавления стационаров
 # TODO: фильтр стационаров по округам
 
