@@ -11,7 +11,7 @@ from webapp.search_worker import search_worker
 # TODO: deploy to heroku app
 # TODO: добавить логирование
 # TODO: добавить статистику просмотра контактов
-# TODO: добавить последний заход вместо datetime (or del, cuz worker can login)
+# TODO: добавить последний заход вместо datetime (or del, cuz worker can't login)
 # TODO: добавить статистику на главную
 # TODO: добавить рекомендуемых исполнителей
 # TODO: подумтаь что делать с отзывами
