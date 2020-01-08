@@ -22,7 +22,6 @@
                 <div class="col-md-9">
                     <div class="box">
                         <div class="wrapper">
-                            <p class="status">Заходил сегодня в datetime</p>
                             <div class="media">
                                 <div class="media-left pic">
                                     <a href={{ item.photo }} target="_blank" data-fancybox
@@ -95,13 +94,8 @@
 
                             <div role="tabpanel" class="tab-pane " id="skills">
                                 <table class="table table-striped">
-                                    {% if item.patient_age == any %}
-                                    <tr>
-                                        <td>Пациенты любого возраста</td>
-                                    </tr>
-                                    {% endif %}
 
-                                    {% if item.patient_age == 'any' %}
+                                    {% if item.patient_age == 'any' or item.patient_age == '0' %}
                                     <tr>
                                         <td>Пациенты любого возраста</td>
                                     </tr>
@@ -238,8 +232,11 @@
                     <ul>
 
                         {% if item.shedule == 0 %}
-                        <li>Любая занятость</li>
+                        <li>Полная занятость (5/2 или 6/1)</li>
+                        <li>Частичная занятость</li>
+                        <li>С проживанием</li>
                         {% endif %}
+
                         {% if item.shedule == 1 %}
                         <li>Полная занятость (5/2 или 6/1)</li>
                         {% endif %}
