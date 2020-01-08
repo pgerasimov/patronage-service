@@ -1,7 +1,7 @@
 def get_age(age):
     age = int(age)
     if 10 < age < 15:
-        return f'{age} "лет'
+        return f'{age} лет'
     else:
         i = age % 10
     if i == 1:
