@@ -8,15 +8,17 @@ from webapp.search_worker import search_worker
 
 
 # roadmap
-# TODO: deploy to heroku app
-# TODO: добавить логирование
 # TODO: добавить последний заход вместо datetime (or del, cuz worker can't login)
 # TODO: добавить статистику на главную
 # TODO: добавить рекомендуемых исполнителей
 # TODO: подумать что делать с отзывами
+# TODO: Показать телефон (убрать фин модель и сделать for free - mvp)
 # TODO: Очистить фильтры
+# TODO: добавить логирование
 # TODO: Basic tests
 # TODO: travice ci
+# TODO: payment integration
+
 
 
 # LOW Priority
