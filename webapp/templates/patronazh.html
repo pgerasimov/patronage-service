@@ -198,13 +198,14 @@
                                 <script type="text/javascript">
 function showNumber()
 {
-document.getElementById('myAnchor').innerHTML= {{ item.phone }};
+document.getElementById('phone').innerHTML= {{ item.phone }};
+
 }
 </script>
 
 
-                                <a id="myAnchor" href="#" class="btn btn-primary" onclick="showNumber()">Показать контакты</a>
-                                <span class="text-primary">за 99 руб.</span>
+                                <a id="phone" href="#" class="btn btn-primary" onclick="showNumber()">Показать контакты</a>
+<!--                                <span id="price" class="text-primary">за 99 руб.</span>-->
                             </div>
                         </div>
                     </div>
