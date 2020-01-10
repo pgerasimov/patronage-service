@@ -58,3 +58,4 @@ class Worker(db.Model):
     walking = db.Column(db.Integer, nullable=True, default=0)
     client_age = db.Column(db.Integer, nullable=False, default=0)
     medical = db.Column(db.Integer, nullable=True, default=0)
+    #viewscount = db.Column(db.Integer, nullable=True, default=0)  #Сколько раз посмотрели этот телефон

@@ -31,12 +31,12 @@
 						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 							<span class="icon-location"></span> Москва
 						</button>
-						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-							<li><a href="#">Санкт-Петербург</a></li>
-							<li><a href="#">Новосибирск</a></li>
-							<li><a href="#">Барнаул</a></li>
-							<li><a href="#">Белгород</a></li>
-						</ul>
+<!--						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">-->
+<!--							<li><a href="#">Санкт-Петербург</a></li>-->
+<!--							<li><a href="#">Новосибирск</a></li>-->
+<!--							<li><a href="#">Барнаул</a></li>-->
+<!--							<li><a href="#">Белгород</a></li>-->
+<!--						</ul>-->
 					</div>
 					<span class="phone">8 800 000 000 000</span>Будни: 8:00 — 20:00 Выходные: 9:00 — 18:00
 				</div>
@@ -61,8 +61,8 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="about">О нас</a></li>
-						<li><a href="#">Соискателям</a></li>
+						<li><a href="/about">О нас</a></li>
+						<li><a href="/worker">Соискателям</a></li>
 					</ul>
 				</div><!-- /.navbar-collapse -->
 			</nav>
@@ -126,7 +126,7 @@
 				<h2 class="section-title">О нас</h2>
 				<div class="row counts">
 					<div class="col-sm-4">
-						<span class="step step1">***</span>
+						<span class="step step1"> {{ workers }}</span>
 						<p>сиделок в г. Москва</p>
 					</div>
 					<div class="col-sm-4">
@@ -135,7 +135,7 @@
 					</div>
 					<div class="col-sm-4">
 						<span class="step step1">***</span>
-						<p>Контактов просмотрено<br/>в этом месяце</p>
+						<p>Контактов просмотрено</p>
 					</div>
 				</div>
 			</div>

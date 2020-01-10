@@ -1,32 +1,11 @@
+import random
+
 from flask import Flask, render_template, request, flash, url_for, redirect
 
 from webapp.forms import ProfileForm, SearchForm
 from webapp.model import db, Worker
 from webapp.new_worker import add_new_worker
 from webapp.search_worker import search_worker
-
-
-
-# roadmap
-# TODO: добавить последний заход вместо datetime (or del, cuz worker can't login)
-# TODO: добавить статистику на главную
-# TODO: добавить рекомендуемых исполнителей
-# TODO: подумать что делать с отзывами
-# TODO: Показать телефон (убрать фин модель и сделать for free - mvp)
-# TODO: Очистить фильтры
-# TODO: добавить логирование
-# TODO: Basic tests
-# TODO: travice ci
-# TODO: payment integration
-
-
-
-# LOW Priority
-# TODO: добавить статистику просмотра контактов
-# TODO: админка для добавления стационаров
-# TODO: фильтр стационаров по округам
-
-
 
 
 def create_app():
@@ -38,14 +17,19 @@ def create_app():
     def index():
         title = 'Патронаж Сервис'
 
-        return render_template('index.html', page_title=title)
+        count_workers = Worker.query.count()
+
+        return render_template('index.html', page_title=title, workers=count_workers)
 
     @app.route('/patronage')
     def patronage():
 
         workers = Worker.query.all()
 
-        return render_template('patronazh.html', worker=workers)
+        recommends_list = random.sample(Worker.query.all(), 3)
+        recommend_workers = (recommends_list[0], recommends_list[1], recommends_list[2])
+
+        return render_template('patronazh.html', worker=workers, recommend_workers=recommend_workers)
 
     @app.route('/hospital')
     def hospital():
@@ -107,16 +91,21 @@ def create_app():
         priceto = request.form.get('priceto')
         shedule = request.form.getlist('shedule')
 
-
         worker = search_worker(options, priceto, pricefrom, agefrom, ageto, gender, shedule)
 
-        return render_template('search_results.html', worker=worker)
+        recommends_list = random.sample(Worker.query.all(), 3)
+        recommend_workers = (recommends_list[0], recommends_list[1], recommends_list[2])
+
+        return render_template('search_results.html', worker=worker, recommend_workers=recommend_workers)
 
     @app.route('/patronazh_item/<id>')
     def patronazh_item(id):
 
         person = Worker.query.filter(Worker.id == id).all()
 
-        return render_template('patronazh_item.html', person=person)
+        recommends_list = random.sample(Worker.query.all(), 3)
+        recommend_workers = (recommends_list[0], recommends_list[1], recommends_list[2])
+
+        return render_template('patronazh_item.html', person=person, recommend_workers=recommend_workers)
 
     return app

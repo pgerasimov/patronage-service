@@ -43,6 +43,5 @@ def search_worker(options, priceto, pricefrom, agefrom, ageto, gender, shedule):
 
     for i in result:
         workers.append(Worker.query.filter(Worker.id == i[0]).all())
-    print(workers)
 
     return workers
