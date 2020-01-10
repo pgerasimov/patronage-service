@@ -199,13 +199,14 @@
 function showNumber()
 {
 document.getElementById('phone').innerHTML= {{ item.phone }};
+document.getElementById('price').style.display = 'none';
 
 }
 </script>
 
 
                                 <a id="phone" href="#" class="btn btn-primary" onclick="showNumber()">Показать контакты</a>
-<!--                                <span id="price" class="text-primary">за 99 руб.</span>-->
+                                <span id="price" class="text-primary">за 99 руб.</span>
                             </div>
                         </div>
                     </div>
